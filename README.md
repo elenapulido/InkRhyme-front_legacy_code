@@ -1,2 +1,2 @@
-# InkRhyme-front
-Ink and Rhyme front-end
+# Ink and Rhyme
+Ink and Rhyme's front-end repository
