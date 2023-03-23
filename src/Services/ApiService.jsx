@@ -1,11 +1,8 @@
-import React from 'react'
-
-function ApiService() {
-
-  
-  return (
-    <div>Api-service</div>
-  )
+export function ApiService(){
+  return fetch('https://api.escuelajs.co/api/v1/products')
+    .then(response => response.json())
+    .then(data => data);
+    
 }
 
-export default ApiService
+export default ApiService;
