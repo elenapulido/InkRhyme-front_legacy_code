@@ -4,11 +4,11 @@ import "./ArticlePage.css";
 
 function ArticlePage() {
   const [data, setData] = useState([{}]);   
-  const [pos, setPos] = useState([]);
-  
+
   
   useEffect(() => {
     ApiService()
+    
       .then((data) => setData(data))
       .catch((error) => console.error(error));
   }, []);
@@ -16,19 +16,16 @@ function ArticlePage() {
   return (
     <div className="article-body">
       <div className="article-container">
-        <img src={data[0].images} alt="art-img" className="article-img" />
+        <img src={data[0].url} alt="art-img" className="article-img" />
         <div className="article-data">
           <p className="article-title">Title: {data[0].title}</p>
-          <p className="article-author">Author: {data[0].price} $</p>
-          <p className="article-cathegory">Amor</p>
+          <p className="article-author">Author: {data[0].author} $</p>
+          <p className="article-cathegory">{data[0].genre}</p>
         </div>
       </div>
       <div className="article-poem-container">
         <p className="article-poem">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio nihil
-          consequuntur, nulla iste officiis facilis, numquam quia esse voluptate
-          quae voluptatum minima ut dolore! Commodi soluta quidem repellat
-          reprehenderit recusandae.
+        {data[0].poem}
         </p>
       </div>
     </div>
