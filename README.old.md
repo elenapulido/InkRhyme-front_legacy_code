@@ -34,7 +34,10 @@ We have used as a team Agile and Scrum methodologies.
 
 
 Background #D7BDE9
+
 Logo #252850 / #FF52B4 / #FFFFFF / #F68AD3 / #000000
+
 Navbar #C19FD7 / #FFFFFF
+
 Footer #C19FD7 / #000000
 
