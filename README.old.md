@@ -24,4 +24,4 @@ We have used as a team Agile and Scrum methodologies.
 
 ![Logo](https://user-images.githubusercontent.com/119578803/228013529-30cee862-6423-4226-9c1b-6f3a01e77e01.png)
 
-                      /// Our logo ///
+                     /// Our logo ///
