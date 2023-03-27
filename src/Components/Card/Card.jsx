@@ -11,7 +11,7 @@ const Card = (props) => {
   }
   return (
     
-    <div >
+    <div>
       <div className='cardContainer'>
         <div className='cardImage'>
             <img  src={props.url} alt='' />
