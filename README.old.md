@@ -22,10 +22,9 @@ Figma, Jira, Github, Planning Poker
 
 We have used as a team Agile and Scrum methodologies.
 
-                   /// Our logo ///
-
+                      /// Our logo ///
 ![Logo](https://user-images.githubusercontent.com/119578803/228013529-30cee862-6423-4226-9c1b-6f3a01e77e01.png)
-/// Our logo ///
+
 
 
 ![Palet colors](https://user-images.githubusercontent.com/119578803/228017246-f5c0c161-93ed-4979-9e5a-d4c4e986a24c.PNG)
