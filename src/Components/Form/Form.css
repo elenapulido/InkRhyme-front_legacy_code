@@ -1,0 +1,48 @@
+.FormPage-Form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #BA93D2;
+    height: 100%;
+}
+
+.Form-row{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2vh 0 2vh 0;
+    gap: 3vw;
+}
+
+.Form-row label{
+    width: 80%;
+}
+
+.Form-ta{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 2vh 0 2vh 0;
+}
+
+input, textarea, label{
+    font-size: 15px;
+    font-weight: 400;
+    font-family: "Jost";
+}
+
+input:focus, textarea:focus {
+    outline: none;
+}
+
+input{
+    width:auto;
+}
+
+.b-post{
+    padding: 5px;
+    background-color: #D5B8E7;
+    border-style: solid;
+    border-color: #86619d;
+}
