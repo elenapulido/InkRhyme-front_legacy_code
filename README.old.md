@@ -30,6 +30,8 @@ We have used as a team Agile and Scrum methodologies.
 
 
 ![Paleta de Colores](https://user-images.githubusercontent.com/119578803/228018860-b0814fd6-25fe-45d5-803d-8d5cbe71f20e.png)
+
+
 Background #D7BDE9
 Logo #252850 / #FF52B4 / #FFFFFF / #F68AD3 / #000000
 Navbar #C19FD7 / #FFFFFF
