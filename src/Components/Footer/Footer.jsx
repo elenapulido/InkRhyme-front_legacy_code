@@ -15,7 +15,6 @@ const Footer = () => {
            <li>Términos</li>
            <li>FAQ</li>
           </ul>
-       
       </div>
      
     
