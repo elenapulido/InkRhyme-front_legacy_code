@@ -6,22 +6,24 @@ import MainPage from './Views/MainPage/MainPage';
 import FormPage from './Views/FormPage/FormPage';
 
 const App = () => {
-  const router = createBrowserRouter([
-    {
-      path: "/",
-      element: <MainPage />
-    },{
-      path: "/Form",
-      element: <FormPage />
-    },{
-      path: "/Article",
-      element: <ArticlePage />
-    },
-  ]);
-  return (
-    <div className="App">
-          <RouterProvider router={router} />
-    </div>
-  );
+ 
+  // const router = createBrowserRouter([
+  //   {
+  //     path: "/",
+  //     element: <MainPage />
+  //   },{
+  //     path: "/Form",
+  //     element: <FormPage />
+  //   },{
+  //     path: "/Article",
+  //     element: <ArticlePage />
+  //   },
+  // ]);
+  return <ArticlePage/>
+    //<div className="App">
+       
+          { /*<RouterProvider router={router} /> */}
+    //</div>
+  
 }
 export default App;
