@@ -1,20 +1,27 @@
-import FormPage from "./Views/FormPage/FormPage";
 import React from 'react';
-import Header from './Components/Header/Header'
-import Navbar from './Components/Navbar/Navbar';
-import Footer from './Components/Footer/Footer';
 import './Styles/App.css';
+import ArticlePage from "./Views/ArticlePage/ArticlePage";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import MainPage from './Views/MainPage/MainPage';
+import FormPage from './Views/FormPage/FormPage';
 
 const App = () => {
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <MainPage />
+    },{
+      path: "/Form",
+      element: <FormPage />
+    },{
+      path: "/Article",
+      element: <ArticlePage />
+    },
+  ]);
   return (
-    <div className ="App"> 
-      <Header/>
-      <Navbar/>
-      <MainPage />
-      
-      <Footer/>
+    <div className="App">
+          <RouterProvider router={router} />
     </div>
   );
-  }
+}
 export default App;

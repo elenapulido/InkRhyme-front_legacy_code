@@ -1,0 +1,57 @@
+.article-body{
+    background-color: hsl(277, 41%, 70%);
+    height: 80vh;
+    padding: 2vh;
+    margin: 3vh;
+}
+
+.article-container{
+    display: flex;
+    padding-bottom: 2vh;
+    
+   
+}
+
+.article-img{
+    width: 35vw;
+    height: 25vh;
+    padding-right: 2vh;
+}
+
+.article-data{
+    justify-content: center;
+
+}
+
+.article-title{
+    font-weight: bold;
+    color: white;
+}
+
+.article-author{
+    color: white;
+}
+
+.article-category{
+    background-color: #E9CCFB ;
+    font-weight: bold;
+    align-items: center;
+    border-radius: 25px;
+}
+
+.article-poem{
+    background-color: #E9CCFB;
+    
+}
+
+.article-icons{
+    display: flex;
+}
+
+.article-icon{
+    cursor: pointer;
+    margin: 1vh;
+    padding: 1vh;
+    background-color: #E9CCFB;
+    border-radius: 50%;
+}
