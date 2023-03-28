@@ -1,0 +1,27 @@
+
+
+
+.navigation  {
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    background-color: #C09DD6;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    box-sizing: border-box;
+    height: 2em;
+    font-size: 2em;
+  }
+  
+  .plusNavigation {
+    position: fixed;
+    left: 0.5em;
+    top: 5.6em;
+  }
+  
+  .hamburguernavigation {
+    position: fixed;
+    right: 0.5em;
+    top: 5.8em;
+  }

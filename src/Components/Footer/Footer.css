@@ -1,0 +1,52 @@
+.footer {
+    display: flex;
+    background-color: #BA93D2;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    margin-right: 0%;
+    color: black;
+    font-size: 18px;
+    line-height: 1;
+   }
+  
+   .column {
+    flex-basis: 50%;
+    
+   }
+  
+  .footer ul li {
+    list-style: none;
+    font-weight: bold;
+  }
+  
+  .LegalInfo {
+  margin-left: -5em;
+  }
+  
+  .continue {
+  font-weight: bold;
+  margin-right: 2.7em;
+  }
+  
+  .icons {
+    margin-top: -0.7em;
+  }
+  
+  .iconfacebook {
+    padding-right: 0.5em;
+  }
+  
+  .iconinstagram {
+    padding-right: 0.5em;
+  }
+  
+  .iconlinkedin {
+    padding-right: 0.5em;
+  }
+  
+  .icontwitter {
+    padding-right: 0.5em;
+  }
+  
