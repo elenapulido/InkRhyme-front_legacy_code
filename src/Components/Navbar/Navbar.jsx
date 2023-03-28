@@ -6,8 +6,8 @@ import { Link } from 'react-router-dom'
 const Navbar = () => {
   return (   
       <nav className='navigation'>
-        <Link className='plusNavigation' to="/Form"><img className='plusNavigation' src={Plus}/></Link>
-        <Link className='hamburguernavigation' to="/Article"><img className='hamburguernavigation' src={Hamburguer}/></Link>
+        <Link  to="/Form"><img className='plusNavigation' src={Plus}/></Link>
+        <Link  to="/Article"><img className='hamburguernavigation' src={Hamburguer}/></Link>
       </nav>    
   );
 }

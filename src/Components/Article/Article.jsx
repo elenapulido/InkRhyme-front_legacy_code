@@ -3,14 +3,20 @@ import ApiGetbyIdService from "../../Services/ApiGetbyIdService";
 import ApiGetService from "../../Services/ApiGetService";
 import { AiFillDelete, AiFillEdit } from "react-icons/ai"
 import "./Article.css";
+import { useLocation, useNavigate } from "react-router-dom";
+import ApiDeleteService from "../../Services/ApiDeleteService";
 
 function Article() {
   const url = "http://localhost:8080/api/v1/poems"
+  let navigate = useNavigate()
+  const idInState = useLocation().state.id
   const [data, setData] = useState([{}]);   
+
+
 
   
   useEffect(() => {
-    ApiGetbyIdService(url, 1)
+    ApiGetbyIdService(url, idInState)
       .then((data) => setData(data))
       .catch((error) => console.error(error));
   }, []);
@@ -24,7 +30,7 @@ function Article() {
           <p className="article-author">Author: {data.author}</p>
           <p className="article-category">{data.genre}</p>
           <div className="article-icons">
-            <AiFillDelete className="article-icon" size={25} color="black"/>
+            <AiFillDelete onClick={() => {ApiDeleteService(url, idInState); navigate("/", {state: { check: true}})}} className="article-icon" size={25} color="black"/>
             <AiFillEdit className="article-icon" size={25} color="black"/>
           </div>
         </div>
