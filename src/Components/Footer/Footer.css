@@ -1,6 +1,7 @@
 .footer {
     display: flex;
     background-color: #BA93D2;
+    justify-content: space-around;
     width: 100%;
     bottom: 0;
     left: 0;
@@ -10,10 +11,8 @@
     line-height: 1;
    }
   
-   .column {
-    flex-basis: 50%;
-    
-   }
+
+   
   
   .footer ul li {
     list-style: none;
@@ -26,7 +25,7 @@
   
   .continue {
   font-weight: bold;
-  margin-right: 2.7em;
+  margin-top: 1.7em;
   }
   
   .icons {
