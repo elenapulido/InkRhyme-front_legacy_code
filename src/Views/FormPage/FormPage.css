@@ -1,5 +1,4 @@
-.FormPage{
-    margin: 15vh 0 15vh 0;
-    height: 70vh;
-    padding: 0 5vw 0 5vw;
+.FormPage-Form{
+    padding: 3vh;
+    margin: 3vh;
 }
