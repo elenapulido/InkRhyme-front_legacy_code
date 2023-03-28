@@ -4,13 +4,14 @@ import Header from './Components/Header/Header'
 import Navbar from './Components/Navbar/Navbar';
 import Footer from './Components/Footer/Footer';
 import './Styles/App.css';
+import MainPage from './Views/MainPage/MainPage';
 
 const App = () => {
   return (
     <div className ="App"> 
       <Header/>
       <Navbar/>
-      <FormPage />
+      <MainPage />
       
       <Footer/>
     </div>
