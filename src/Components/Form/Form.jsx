@@ -28,7 +28,9 @@ function Form() {
 
     function handleSubmit(event) {
         event.preventDefault();
-        ApiPostService(url, item)      
+        ApiPostService(url, item)  
+            
+    
     }
 
     return (
@@ -47,6 +49,7 @@ function Form() {
                         <input type="text" name="title" onChange={handleChange} id="" placeholder="Título" required />
                     </div>
                 </div>
+                
                 <div className='Form-row'>
                     <label>Género:</label>
                     <CategoryInput categories={categories} selectedcategory={selectedCategory} onSelectedcategoryChange={handleSelectedCategoryChange} />
