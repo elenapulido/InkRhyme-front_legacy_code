@@ -7,7 +7,7 @@ import "./Footer.css"
 
 const Footer = () => {
   return (  
-    <div className="footer">
+    <div id="footer" className="footer">
       
         <div className='LegalInfo'>
           <ul>
@@ -17,15 +17,18 @@ const Footer = () => {
           </ul>
       </div>
      
-    
-        <div className='icons'>
-        <p className='continue'>Síguenos en:</p>
-         <a className='continue' href='https://es-es.facebook.com/'><img className='iconfacebook' src={Facebook} /></a>
-         <a className='continue' href='https://www.instagram.com/'><img className='iconinstagram' src={Instagram}/></a>
-         <a className='continue' href='https://www.linkedin.com/'><img className='iconlinkedin' src={LinkedIn}/></a>
-         <a className='continue' href='https://twitter.com/'><img className='icontwitter' src={Twitter} /></a>
-       
-      </div> 
+        <div className='column2'>   
+          <div className='continue'>
+            <p>Síguenos en:</p>
+          </div> 
+          <div className='icons'>
+            <a className='continue' href='https://es-es.facebook.com/'><img className='iconfacebook' src={Facebook} /></a>
+            <a className='continue' href='https://www.instagram.com/'><img className='iconinstagram' src={Instagram}/></a>
+            <a className='continue' href='https://www.linkedin.com/'><img className='iconlinkedin' src={LinkedIn}/></a>
+            <a className='continue' href='https://twitter.com/'><img className='icontwitter' src={Twitter} /></a>
+          </div>
+        </div>  
+      
     </div>  
     );
   }
