@@ -1,24 +1,36 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import "./Navbar.css"
 import Plus from '../../Assets/Img/Plus.png'
 import Hamburguer from '../../Assets/Img/Hamburguer.png'
 import { Link } from 'react-router-dom'
-const Navbar = () => {
 
-  let [menu, setMenu] = useState(false)
+const Navbar = () => {
+  const [showMenu, setShowMenu] = useState(false);
+
+  const handleClick = () => {
+    setShowMenu(!showMenu);
+  }
+
+  const scrollToFooter = () => {
+    const footer = document.getElementById('footer');
+    footer.scrollIntoView({ behavior: 'smooth' });
+  }
 
   return (   
-      <nav className='navigation'>
-        <Link  to="/Form"><img className='plusNavigation' src={Plus}/></Link>
-        <div>
-        <Link ><img className='hamburguernavigation' onClick={() => {setMenu(!menu)}} src={Hamburguer}/></Link>
-        <ul className={`dropdown ${menu ? "drop-active" : "drop-inactive"}`}>
-          <li>sdf</li>
-          <li>sdf</li>
-          <li>sf</li>
-        </ul>
-        </div>
-      </nav>
+    <nav className='navigation'>
+      <button className='plus-btn'>
+        <Link  to="/Form"><img className='plusNavigation' src={Plus} alt='Plus Menu'/></Link>
+      </button>
+      <button className='hamburger-btn' onClick={handleClick}>
+        <img src={Hamburguer} alt='Hamburguer Menu' />
+      </button>
+      <ul className={`menu ${showMenu ? 'show' : ''}`}>
+      <Link  to="/"><li>Inicio</li></Link>
+        <li>Explora</li>
+        <li>Buscar</li>
+        <li onClick={scrollToFooter}>Conócenos</li>
+      </ul>
+    </nav> 
   );
 }
 

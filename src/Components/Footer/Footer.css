@@ -2,6 +2,7 @@
     display: flex;
     background-color: #BA93D2;
     justify-content: space-around;
+    position: relative;
     width: 100%;
     bottom: 0;
     left: 0;
@@ -11,21 +12,31 @@
     line-height: 1;
    }
   
+  .footer ul {
+    margin-left: -2.8em;
+    margin-top: 1.5em;
+  }
 
-   
-  
   .footer ul li {
     list-style: none;
     font-weight: bold;
+    text-align: left;
   }
+
+  
    
   .continue {
   font-weight: bold;
-  margin-top: 1.7em;
+  margin-top: 1.5em;
+  }
+
+  .continue p {
+    margin-right: 1.1em;
   }
   
   .icons {
     margin-top: -0.7em;
+    margin-right: -1.3em;
   }
   
   .iconfacebook {

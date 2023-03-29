@@ -9,23 +9,20 @@
 
 .cardImage {
     display: flex;
+    position: relative;
 }
 
 .cardImage img {
+    
     height: 412px;
     width: 295px;
+
+
 }
 
-#heart {
+.favHeart{
     position: absolute;
-    background: url('../../Assets/Img/heart.png') no-repeat;
-    background-position: left;
-    background-size: 2900%;
-    margin: 10% 0% 0% 60%;
-    height: 32vh;
-    width: 32vw;
-    transform: translate(-50%, -50%);
-
+    top:0
 }
 
 #heart.heart-active {
