@@ -10,12 +10,19 @@
 .cardImage {
     display: flex;
     position: relative;
+    filter: drop-shadow(0 0 0 #fff);
+    transition: all 0.3s;
+}
+
+.cardImage:hover {
+    filter: drop-shadow(0 0 30px #fff);
 }
 
 .cardImage img {
     
     height: 412px;
     width: 295px;
+   
 
 
 }

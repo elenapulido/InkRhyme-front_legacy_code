@@ -26,7 +26,7 @@ function Article() {
       <div className="article-container">
         <img src={data.url} alt="art-img" className="article-img" />
         <div className="article-data">
-          <p className="article-title">Title: {data.title}</p>
+          <p className="article-title">{data.title}</p>
           <p className="article-author">Author: {data.author}</p>
           <p className="article-category">{data.genre}</p>
           <div className="article-icons">
