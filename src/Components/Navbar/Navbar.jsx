@@ -25,7 +25,7 @@ const Navbar = () => {
         <img src={Hamburguer} alt='Hamburguer Menu' />
       </button>
       <ul className={`menu ${showMenu ? 'show' : ''}`}>
-      <Link  to="/"><li>Inicio</li></Link>
+      <Link  to="/" className='link-a'><li>Inicio</li></Link>
         <li>Explora</li>
         <li>Buscar</li>
         <li onClick={scrollToFooter}>Conócenos</li>

@@ -79,7 +79,10 @@
   }
 
   
-
+  .link-a{
+    color: white;
+    text-decoration: none;
+  }
 
   
   .drop-inactive{
