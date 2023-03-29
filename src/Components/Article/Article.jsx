@@ -8,9 +8,9 @@ import ApiDeleteService from "../../Services/ApiDeleteService";
 
 function Article() {
   const url = "http://localhost:8080/api/v1/poems"
-  let navigate = useNavigate()
   const idInState = useLocation().state.id
   const [data, setData] = useState([{}]);   
+  const navigate = useNavigate()
 
 
 
@@ -30,8 +30,8 @@ function Article() {
           <p className="article-author">Author: {data.author}</p>
           <p className="article-category">{data.genre}</p>
           <div className="article-icons">
-            <AiFillDelete onClick={() => {ApiDeleteService(url, idInState); navigate("/", {state: { check: true}})}} className="article-icon" size={25} color="black"/>
-            <AiFillEdit className="article-icon" size={25} color="black"/>
+            <a href="/"><AiFillDelete onClick={() => {ApiDeleteService(url, idInState)}} className="article-icon" size={25} color="black"/></a>
+            <AiFillEdit onClick={() => {navigate("/Form", {state: {id: idInState}})}} className="article-icon" size={25} color="black"/>
           </div>
         </div>
       </div>
