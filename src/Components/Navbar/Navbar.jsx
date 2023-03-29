@@ -19,14 +19,13 @@ const Navbar = () => {
   return (   
     <nav className='navigation'>
       <button className='plus-btn'>
-        {/* <img src={Plus} alt='Plus Menu' /> */}
         <Link  to="/Form"><img className='plusNavigation' src={Plus} alt='Plus Menu'/></Link>
       </button>
       <button className='hamburger-btn' onClick={handleClick}>
         <img src={Hamburguer} alt='Hamburguer Menu' />
       </button>
       <ul className={`menu ${showMenu ? 'show' : ''}`}>
-        <li>Inicio</li>
+      <Link  to="/" className='link-a'><li>Inicio</li></Link>
         <li>Explora</li>
         <li>Buscar</li>
         <li onClick={scrollToFooter}>Conócenos</li>

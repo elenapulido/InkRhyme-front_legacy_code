@@ -30,19 +30,36 @@ input, textarea, label{
     font-size: 15px;
     font-weight: 400;
     font-family: "Jost";
+ 
+   
 }
+
+
 
 input:focus, textarea:focus {
     outline: none;
+    
 }
 
 input{
     width:auto;
+    border: none;
+    background-color: #f4e3ffcb;
+    border-style: none;
+    border-bottom: #BA93D2;
+    border-bottom-style: outset;
 }
 
 .b-post{
-    padding: 5px;
-    background-color: #D5B8E7;
-    border-style: solid;
-    border-color: #86619d;
+   
+    border-radius: 50%;
+    background-color: #F4E3FF;
+    border-style: none;
+    
+}
+
+label{
+    color: white;
+    font-weight: bold;
+    letter-spacing: 0.2vh;
 }

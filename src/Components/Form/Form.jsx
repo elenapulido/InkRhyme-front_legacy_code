@@ -1,20 +1,29 @@
 import React, { useEffect, useState } from 'react'
+import toast, { Toaster } from 'react-hot-toast';
 import ApiGetService from '../../Services/ApiGetService'
 import "./Form.css"
 import { FiSave } from "react-icons/fi";
 import ApiPostService from '../../Services/ApiPostService';
 import CategoryInput from '../CategoryInput/CategoryInput';
-
+import ApiPutService from '../../Services/ApiPutService';
+import { useLocation } from 'react-router-dom';
+import save from '../../Assets/Img/save.png'
 
 function Form() {
     let url = "http://localhost:8080/api/v1/poems"
     const categories = ['Romántico heterosexual', 'Romántico homosexual', 'Elegía', 'Epigrama', 'Fantasía'];
-    let [item, setItem] = useState({})
+    let [item, setItem] = useState({genre: categories[0]})
+    const State = useLocation().state
+
+    const notify = () => toast('Poema añadido! ');
 
     const [selectedCategory, setSelectedCategory] = useState(categories[0]);
 
     const handleSelectedCategoryChange = (category) => {
         setSelectedCategory(category);
+        let temp_item = item
+        temp_item["genre"] = category
+        setItem(temp_item)
     };
 
     function handleChange(event) {
@@ -28,15 +37,17 @@ function Form() {
 
     function handleSubmit(event) {
         event.preventDefault();
-        ApiPostService(url, item)  
-            
-    
+        State ? ApiPutService(url, item, State.id) : ApiPostService(url, item)
+        window.location.href = "/"
     }
+
+    
 
     return (
         <div className='FormPage-Form'>
-            <form onSubmit={handleSubmit} action="" method="post">
-                <button className='b-post'>Post <FiSave /></button>
+            <form onSubmit={handleSubmit}  method="post">
+                <button className='b-post' onClick={notify}><img src={save}/></button>
+                <Toaster />
                 <div className='Form-row'>
                     <label>URL de la imagen:</label>
                     <div className="form-row-div">

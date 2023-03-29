@@ -6,23 +6,16 @@ import ApiGetService from '../../Services/ApiGetService';
 import Header from '../../Components/Header/Header'
 import Navbar from '../../Components/Navbar/Navbar'
 import Footer from '../../Components/Footer/Footer';
-import { useLocation } from 'react-router-dom';
 
 function MainPage() {
   const url = "http://localhost:8080/api/v1/poems"
   const [data, setData] = useState([]);
-  let location = useLocation()
-  let checkToRender = location.state ? location.state.check : false;
-  
 
   useEffect(() => {
-    if (checkToRender == true) {
-      checkToRender = false
-    }
     ApiGetService(url)
       .then((data) => setData(data))
       .catch((error) => console.error(error));
-  }, [checkToRender]);
+  }, []);
 
   return (
     <div>
@@ -33,7 +26,7 @@ function MainPage() {
           <Card key={item.id} id={item.id} title={item.title} url={item.url} />
         ))
         :
-        <h1>No hay ningun poema :c</h1>
+        <h3>Cargando poemas...</h3>
       }
       <Footer />
     </div>

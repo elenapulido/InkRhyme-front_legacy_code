@@ -5,19 +5,22 @@
   }
   
   .dropdown__header, .form-row-div {
-    padding: 5px;
-    background-color: #ba93d2;
+    padding: 1px;
+    
+    background-color: #9c64be;
     color: #000000;
-    border: 1px solid #86619d;
+   
     display: flex;
-    justify-content: space-between;
+    justify-content: end;
     align-items: center;
   }
   
   .dropdown__header svg {
-    margin-left: 1vw;
+    
     position: absolute;
-    right: 1.5vh;
+    margin: 0;
+    width: 6vw;
+
   }
   
   .dropdown__categories {
@@ -30,7 +33,7 @@
     max-height: 200px;
     overflow-y: auto;
     background-color: #fff;
-    color: #333;
+    color: #fff;
     border: 1px solid #ccc;
     z-index: 1;
     list-style-type: none;
@@ -41,6 +44,8 @@
     padding: 5px;
     cursor: pointer;
     transition: background-color 0.2s ease-in-out;
+    background-color: #9c64be;
+   
   }
   
   .dropdown__category:hover,

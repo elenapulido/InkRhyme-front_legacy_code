@@ -65,6 +65,7 @@
     font-weight: bold;
     padding: 20px;
     border: solid 1px #77578b;
+    z-index: 1;
   }
   
   .menu.show {
@@ -78,7 +79,12 @@
   }
 
   
-
+  .link-a{
+    color: white;
+    text-decoration: none;
+  }
 
   
-  
+  .drop-inactive{
+    display: none !important ;
+  }
