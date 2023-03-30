@@ -7,7 +7,7 @@ import "./Header.css"
 const Header = () => {
     return (   
        <div id='headerId' className='header'>
-        <Link className="hogo" to="/"><img className='hogo' src={Logo}/></Link> 
+        <Link className="logo" to="/"><img className='logo' src={Logo}/></Link> 
        </div>
        
     );
