@@ -6,8 +6,8 @@ import "./Header.css"
 
 const Header = () => {
     return (   
-       <div className='Header'>
-        <Link className="Logo" to="/"><img className='Logo' src={Logo}/></Link> 
+       <div id='headerId' className='header'>
+        <Link className="logo" to="/"><img className='logo' src={Logo}/></Link> 
        </div>
        
     );
