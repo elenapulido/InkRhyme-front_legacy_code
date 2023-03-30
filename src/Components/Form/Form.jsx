@@ -7,15 +7,20 @@ import { IoMdReturnLeft } from "react-icons/io";
 import ApiPostService from '../../Services/ApiPostService';
 import CategoryInput from '../CategoryInput/CategoryInput';
 import ApiPutService from '../../Services/ApiPutService';
-import { useLocation } from 'react-router-dom';
+import {useLocation, useNavigate } from 'react-router-dom';
 import save from '../../Assets/Img/save.png'
 import { BiLeftTopArrowCircle } from "react-icons/ai";
 
 function Form() {
     let url = "http://localhost:8080/api/v1/poems"
     const categories = ['Romántico heterosexual', 'Romántico homosexual', 'Elegía', 'Epigrama', 'Fantasía'];
+<<<<<<< HEAD
     let [item, setItem] = useState({ genre: categories[0] })
     let [isSubmitted, setIsSubmitted] = useState(false)
+=======
+    let [item, setItem] = useState({genre: categories[0]})
+    let navigate = useNavigate();
+>>>>>>> 4ad228d5182e6181cb6d46c408e92aa9ba02883f
     const State = useLocation().state
 
     const notify = () => toast('Poema añadido! ');

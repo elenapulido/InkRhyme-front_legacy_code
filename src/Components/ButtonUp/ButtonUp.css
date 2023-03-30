@@ -1,0 +1,21 @@
+.buttonUp {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    height: 5vh;
+    width: 5vh;
+    background-color: white;
+    bottom: 0;
+    margin-right: 2vh;
+    margin-bottom: 10vh;
+    position: fixed;
+    z-index: 1;
+    border: none;
+
+}
+.divButtonUp {
+   display: flex;
+   justify-content: end;
+   
+}
