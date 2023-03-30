@@ -1,4 +1,4 @@
-.FormPage-Form{
+.FormPage-Form {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -6,6 +6,7 @@
     background-color: #BA93D2;
     height: 100%;
 }
+
 /* .FormPage-Form form{
     display: flex;
     flex-direction: column;
@@ -13,7 +14,7 @@
     align-items:center;
 } */
 
-.Form-row{
+.Form-row {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -21,34 +22,37 @@
     gap: 3vw;
 }
 
-.Form-row label{
+.Form-row label {
     width: 80%;
 }
 
-.Form-ta{
+.Form-ta {
     display: flex;
     justify-content: center;
     flex-direction: column;
     margin: 2vh 0 2vh 0;
 }
 
-input, textarea, label{
+input,
+textarea,
+label {
     font-size: 15px;
     font-weight: 400;
     font-family: "Jost";
- 
-   
+
+
 }
 
 
 
-input:focus, textarea:focus {
+input:focus,
+textarea:focus {
     outline: none;
-    
+
 }
 
-input{
-    width:auto;
+input {
+    width: auto;
     border: none;
     background-color: #f4e3ffcb;
     border-style: none;
@@ -56,12 +60,11 @@ input{
     border-bottom-style: outset;
 }
 
-.b-post{
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   position: relative;
-   left: 45%;
+.b-post,
+.b-return {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border-radius: 50%;
     background-color: #F4E3FF;
     border-style: none;
@@ -69,13 +72,19 @@ input{
     width: 4vh;
 }
 
-.b-post svg{
+.b-post {
+    position: relative;
+    left: 45%;
+}
+
+.b-post svg,
+.b-return svg{
     margin: 0;
     height: 3vh;
     width: 3vh;
 }
 
-label{
+label {
     color: white;
     font-weight: bold;
     letter-spacing: 0.2vh;

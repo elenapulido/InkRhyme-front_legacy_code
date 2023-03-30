@@ -53,7 +53,7 @@ function Form() {
             {isSubmitted ?
                 <>
                     <h2>Volver a la página de inicio</h2>
-                    <button className='b-post' onClick={() => {window.location.href = "/"}}><IoMdReturnLeft /></button>
+                    <button className='b-return' onClick={() => {window.location.href = "/"}}><IoMdReturnLeft /></button>
                 </>
                 :
                 <form onSubmit={handleSubmit} method="post">
