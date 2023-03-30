@@ -2,7 +2,8 @@ import axios from "axios"
 
 async function ApiPostService(url, item) {
         try {
-            await axios.post(url + '/save', item)
+            let response = await axios.post(url + '/save', item)
+            console.log(response)
         } catch (error) {
           console.log(error)
         }

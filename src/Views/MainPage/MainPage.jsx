@@ -6,6 +6,7 @@ import ApiGetService from '../../Services/ApiGetService';
 import Header from '../../Components/Header/Header'
 import Navbar from '../../Components/Navbar/Navbar'
 import Footer from '../../Components/Footer/Footer';
+import ButtonUp from '../../Components/ButtonUp/ButtonUp';
 
 function MainPage() {
   const url = "http://localhost:8080/api/v1/poems"
@@ -28,6 +29,7 @@ function MainPage() {
         :
         <h3>Cargando poemas...</h3>
       }
+      <ButtonUp />
       <Footer />
     </div>
   )

@@ -6,13 +6,14 @@ import { FiSave } from "react-icons/fi";
 import ApiPostService from '../../Services/ApiPostService';
 import CategoryInput from '../CategoryInput/CategoryInput';
 import ApiPutService from '../../Services/ApiPutService';
-import { useLocation } from 'react-router-dom';
+import {useLocation, useNavigate } from 'react-router-dom';
 import save from '../../Assets/Img/save.png'
 
 function Form() {
     let url = "http://localhost:8080/api/v1/poems"
     const categories = ['Romántico heterosexual', 'Romántico homosexual', 'Elegía', 'Epigrama', 'Fantasía'];
     let [item, setItem] = useState({genre: categories[0]})
+    let navigate = useNavigate();
     const State = useLocation().state
 
     const notify = () => toast('Poema añadido! ');
@@ -38,7 +39,8 @@ function Form() {
     function handleSubmit(event) {
         event.preventDefault();
         State ? ApiPutService(url, item, State.id) : ApiPostService(url, item)
-        window.location.href = "/"
+        //window.location.href = "/"//
+        //navigate("/")//
     }
 
     
