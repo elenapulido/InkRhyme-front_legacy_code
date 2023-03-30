@@ -5,6 +5,8 @@ import { AiFillDelete, AiFillEdit } from "react-icons/ai"
 import "./Article.css";
 import { useLocation, useNavigate } from "react-router-dom";
 import ApiDeleteService from "../../Services/ApiDeleteService";
+import HeartButton from "../HeartButton/HeartButton";
+
 
 function Article() {
   const url = "http://localhost:8080/api/v1/poems"
@@ -32,7 +34,9 @@ function Article() {
           <div className="article-icons">
             <a href="/"><AiFillDelete onClick={() => {ApiDeleteService(url, idInState)}} className="article-icon" size={25} color="black"/></a>
             <AiFillEdit onClick={() => {navigate("/Form", {state: {id: idInState}})}} className="article-icon" size={25} color="black"/>
+            
           </div>
+          <HeartButton/>
         </div>
       </div>
       <div className="article-poem-container">

@@ -22,35 +22,18 @@
     
     height: 412px;
     width: 295px;
-   
+    
 
 
 }
 .cardText{
     font-weight: 100;
     letter-spacing: 0.5vh;
+    cursor: pointer;
   
 }
 
 .cardText:hover{
 font-weight: bold;
 }
-.favHeart{
-    position: absolute;
-    top:0
-}
 
-#heart.heart-active {
-    animation: animate .8s steps(28) 1;
-    background-position: right;
-}
-
-@keyframes animate {
-    0% {
-        background-position: left;
-    }
-
-    100% {
-        background-position: right;
-    }
-}
