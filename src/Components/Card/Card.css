@@ -26,7 +26,15 @@
 
 
 }
+.cardText{
+    font-weight: 100;
+    letter-spacing: 0.5vh;
+  
+}
 
+.cardText:hover{
+font-weight: bold;
+}
 .favHeart{
     position: absolute;
     top:0

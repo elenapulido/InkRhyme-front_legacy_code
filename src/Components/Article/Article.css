@@ -1,13 +1,14 @@
 .article-body{
     background-color: hsl(277, 41%, 70%);
-    height: 80vh;
     padding: 2vh;
     margin: 3vh;
+    height: wrap;
 }
 
 .article-container{
     display: flex;
     padding-bottom: 2vh;
+    
     
    
 }
@@ -26,10 +27,12 @@
 .article-title{
     font-weight: bold;
     color: white;
+    letter-spacing: 0.3vw;
 }
 
 .article-author{
     color: white;
+    font-weight: 100;
 }
 
 .article-category{

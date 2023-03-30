@@ -26,7 +26,7 @@ function MainPage() {
           <Card key={item.id} id={item.id} title={item.title} url={item.url} />
         ))
         :
-        <h3>No hay ningun poema :c</h3>
+        <h3>Cargando poemas...</h3>
       }
       <Footer />
     </div>

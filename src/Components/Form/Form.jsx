@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from 'react'
+import toast, { Toaster } from 'react-hot-toast';
 import ApiGetService from '../../Services/ApiGetService'
 import "./Form.css"
-import { FiSave } from "react-icons/fi";
+import { CiSaveUp1 } from "react-icons/ci";
+import { IoMdReturnLeft } from "react-icons/io";
 import ApiPostService from '../../Services/ApiPostService';
 import CategoryInput from '../CategoryInput/CategoryInput';
 import ApiPutService from '../../Services/ApiPutService';
 import { useLocation } from 'react-router-dom';
-
+import save from '../../Assets/Img/save.png'
+import { BiLeftTopArrowCircle } from "react-icons/ai";
 
 function Form() {
     let url = "http://localhost:8080/api/v1/poems"
@@ -15,6 +18,7 @@ function Form() {
     let [isSubmitted, setIsSubmitted] = useState(false)
     const State = useLocation().state
 
+    const notify = () => toast('Poema añadido! ');
 
     const [selectedCategory, setSelectedCategory] = useState(categories[0]);
 
@@ -37,21 +41,23 @@ function Form() {
     function handleSubmit(event) {
         event.preventDefault();
         State ? ApiPutService(url, item, State.id) : ApiPostService(url, item)
-        // window.location.href = "/"
-
+        notify()
+        setIsSubmitted(true)
     }
 
 
 
     return (
         <div className='FormPage-Form'>
+            <Toaster />
             {isSubmitted ?
                 <>
-
+                    <h2>Volver a la página de inicio</h2>
+                    <button className='b-post' onClick={() => {window.location.href = "/"}}><IoMdReturnLeft /></button>
                 </>
                 :
                 <form onSubmit={handleSubmit} method="post">
-                    <button className='b-post'>Post <FiSave /></button>
+                    <button className='b-post'><CiSaveUp1  /></button>
                     <div className='Form-row'>
                         <label>URL de la imagen:</label>
                         <div className="form-row-div">
