@@ -11,7 +11,8 @@ import { useLocation } from 'react-router-dom';
 function Form() {
     let url = "http://localhost:8080/api/v1/poems"
     const categories = ['Romántico heterosexual', 'Romántico homosexual', 'Elegía', 'Epigrama', 'Fantasía'];
-    let [item, setItem] = useState({genre: categories[0]})
+    let [item, setItem] = useState({ genre: categories[0] })
+    let [isSubmitted, setIsSubmitted] = useState(false)
     const State = useLocation().state
 
 
@@ -36,43 +37,51 @@ function Form() {
     function handleSubmit(event) {
         event.preventDefault();
         State ? ApiPutService(url, item, State.id) : ApiPostService(url, item)
-        window.location.href = "/"
+        // window.location.href = "/"
+
     }
 
-    
+
 
     return (
         <div className='FormPage-Form'>
-            <form onSubmit={handleSubmit}  method="post">
-                <button className='b-post'>Post <FiSave /></button>
-                <div className='Form-row'>
-                    <label>URL de la imagen:</label>
-                    <div className="form-row-div">
-                        <input type="url" name="url" onChange={handleChange} autoComplete="off" placeholder="Url de la Imagén" required pattern="https?://.+" />
+            {isSubmitted ?
+                <>
+
+                </>
+                :
+                <form onSubmit={handleSubmit} method="post">
+                    <button className='b-post'>Post <FiSave /></button>
+                    <div className='Form-row'>
+                        <label>URL de la imagen:</label>
+                        <div className="form-row-div">
+                            <input type="url" name="url" onChange={handleChange} autoComplete="off" placeholder="Url de la Imagén" required pattern="https?://.+" />
+                        </div>
                     </div>
-                </div>
-                <div className='Form-row'>
-                    <label>Título:</label>
-                    <div className="form-row-div">
-                        <input type="text" name="title" onChange={handleChange} id="" placeholder="Título" required />
+                    <div className='Form-row'>
+                        <label>Título:</label>
+                        <div className="form-row-div">
+                            <input type="text" name="title" onChange={handleChange} id="" placeholder="Título" required />
+                        </div>
                     </div>
-                </div>
-                <div className='Form-row'>
-                    <label>Género:</label>
-                    <CategoryInput categories={categories} selectedcategory={selectedCategory} onSelectedcategoryChange={handleSelectedCategoryChange} />
-                
-                </div>
-                <div className='Form-row'>
-                    <label>Autor:</label>
-                    <div className="form-row-div">
-                        <input type="text" name="author" onChange={handleChange} id="" placeholder="Autor" required />
+                    <div className='Form-row'>
+                        <label>Género:</label>
+                        <CategoryInput categories={categories} selectedcategory={selectedCategory} onSelectedcategoryChange={handleSelectedCategoryChange} />
+
                     </div>
-                </div>
-                <div className='Form-ta'>
-                    <label>Tu Poema:</label>
-                    <textarea rows="8" type="text" onChange={handleChange} name="poem" id="" required />
-                </div>
-            </form>
+                    <div className='Form-row'>
+                        <label>Autor:</label>
+                        <div className="form-row-div">
+                            <input type="text" name="author" onChange={handleChange} id="" placeholder="Autor" required />
+                        </div>
+                    </div>
+                    <div className='Form-ta'>
+                        <label>Tu Poema:</label>
+                        <textarea rows="8" type="text" onChange={handleChange} name="poem" id="" required />
+                    </div>
+                </form>
+            }
+
         </div>
     )
 }
