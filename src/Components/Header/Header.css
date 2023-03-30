@@ -1,5 +1,5 @@
 
-.Header {
+.header {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -11,4 +11,4 @@
   
   .logo {
    height: 100%;
-   }
+  }

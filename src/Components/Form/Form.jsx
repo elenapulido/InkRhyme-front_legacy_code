@@ -45,14 +45,18 @@ function Form() {
         setIsSubmitted(true)
     }
 
-
+    useEffect(()=>{
+        if (State) {
+            
+        }
+    })
 
     return (
         <div className='FormPage-Form'>
             <Toaster />
             {isSubmitted ?
                 <>
-                    <h2>Volver a la página de inicio</h2>
+                    <h2 className='return-h2'>Volver a la página de inicio</h2>
                     <button className='b-return' onClick={() => {window.location.href = "/"}}><IoMdReturnLeft /></button>
                 </>
                 :
