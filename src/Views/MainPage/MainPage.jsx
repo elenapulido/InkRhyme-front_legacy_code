@@ -1,19 +1,18 @@
-
 import Card from '../../Components/Card/Card';
 import './MainPage.css';
 import { useEffect, useState } from 'react';
-import ApiGetService from '../../Services/ApiGetService';
+import HTTPService from '../../Services/HTTPService';
 import Header from '../../Components/Header/Header'
 import Navbar from '../../Components/Navbar/Navbar'
 import Footer from '../../Components/Footer/Footer';
 import ButtonUp from '../../Components/ButtonUp/ButtonUp';
 
 function MainPage() {
-  const url = "http://localhost:8080/api/v1/poems"
+  const url = "http://localhost:8082/api/v1/poems"
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    ApiGetService(url)
+    HTTPService().ApiGetService(url)
       .then((data) => setData(data))
       .catch((error) => console.error(error));
   }, []);
