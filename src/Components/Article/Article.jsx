@@ -6,27 +6,20 @@ import HTTPService from "../../Services/HTTPService";
 import HeartButton from "../HeartButton/HeartButton";
 
 function Article() {
-  const url = "http://localhost:8082/api/v1/poems"
-  const [poem, setPoem] = useState({});
+  const [data, setData] = useState({});
   const idInState = useLocation().state.id
   const location = useLocation();
   const navigate = useNavigate();
 
   useEffect(() => {
-    const poemId = location.state?.id;
-    if (!poemId) {
-      navigate("/");
-      return;
-    }
-
-    HTTPService().ApiGetbyIdService(url, idInState)
-      .then(setPoem)
-      .catch(console.error);
+    HTTPService().ApiGetbyIdService(idInState)
+    .then((data) => setData(data))
+    .catch((error) => console.error(error));
   }, [location.state, navigate]);
 
   const handleDelete = () => {
     if (window.confirm("¿Está seguro de que desea eliminar este elemento?")) {
-      HTTPService().ApiDeleteService(poem.id)
+      HTTPService().ApiDeleteService(data.id)
         .then(() => navigate("/"))
         .catch(console.error);
     }
@@ -35,16 +28,16 @@ function Article() {
   return (
     <div className="article-body">
       <div className="article-container">
-        <img src={poem.url} alt="art-img" className="article-img" />
+        <img src={data.url} alt="art-img" className="article-img" />
         <div className="article-data">
-          <p className="article-title">{poem.title}</p>
-          <p className="article-author">Author: {poem.author}</p>
-          <p className="article-category">{poem.genre}</p>
+          <p className="article-title">{data.title}</p>
+          <p className="article-author">Author: {data.author}</p>
+          <p className="article-category">{data.genre}</p>
           <div className="article-icons">
             <button onClick={handleDelete}>
               <AiFillDelete className="article-icon" size={25} color="black"/>
             </button>
-            <button onClick={() => navigate("/Form", { state: { id: poem.id } })}>
+            <button onClick={() => navigate("/Form", { state: { id: data.id } })}>
               <AiFillEdit className="article-icon" size={25} color="black"/>
             </button>
           </div>
@@ -52,7 +45,7 @@ function Article() {
         </div>
       </div>
       <div className="article-poem-container">
-        <p className="article-poem">{poem.poem}</p>
+        <p className="article-poem">{data.poem}</p>
       </div>
     </div>
   );
