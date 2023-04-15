@@ -7,15 +7,14 @@ import HeartButton from "../HeartButton/HeartButton";
 
 function Article() {
   const [data, setData] = useState({});
-  const idInState = useLocation().state.id
-  const location = useLocation();
+  const idState = useLocation().state.id
   const navigate = useNavigate();
 
   useEffect(() => {
-    HTTPService().ApiGetbyIdService(idInState)
+    HTTPService().ApiGetbyIdService(idState)
     .then((data) => setData(data))
     .catch((error) => console.error(error));
-  }, [location.state, navigate]);
+  }, []);
 
   const handleDelete = () => {
     if (window.confirm("¿Está seguro de que desea eliminar este elemento?")) {
@@ -24,6 +23,11 @@ function Article() {
         .catch(console.error);
     }
   };
+  
+//   const handleEdit = (id) => {
+//     const dataToEdit = data.find(d => d.id === id);
+//     setEditingData(dataToEdit);
+// }
 
   return (
     <div className="article-body">
@@ -37,11 +41,11 @@ function Article() {
             <button onClick={handleDelete}>
               <AiFillDelete className="article-icon" size={25} color="black"/>
             </button>
-            <button onClick={() => navigate("/Form", { state: { id: data.id } })}>
+            <button onClick={() => {navigate("/Form", {state: {id: idState}})}}>
               <AiFillEdit className="article-icon" size={25} color="black"/>
             </button>
           </div>
-          <HeartButton />
+         <HeartButton /> 
         </div>
       </div>
       <div className="article-poem-container">

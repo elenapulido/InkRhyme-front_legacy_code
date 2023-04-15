@@ -21,7 +21,7 @@ const HTTPService = () => {
 
   };
 
-  const ApiPutService = async (id, data) => {
+  const ApiPutService = async (id, data, url) => {
     const response = await axios.put(`${url}/${id}`, data);
     return response.data;
 

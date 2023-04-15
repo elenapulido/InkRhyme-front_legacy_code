@@ -9,7 +9,7 @@ import {useLocation } from 'react-router-dom';
 
 
 function Form() {
-    let url = "http://localhost:8082/api/v1/poems"
+    
     const categories = ['Romántico heterosexual', 'Romántico homosexual', 'Elegía', 'Epigrama', 'Fantasía'];
     let [item, setItem] = useState({ genre: categories[0] })
     let [isSubmitted, setIsSubmitted] = useState(false)
@@ -35,47 +35,13 @@ function Form() {
         setItem(temp_item)
     }
 
-    // function handleSubmit(event) {
-    //     event.preventDefault();
-    //     State ? HTTPService().ApiPutService(url, item, State.id) : HTTPService().ApiPostService(url, item)
-    //     notify()
-    //     setIsSubmitted(true)
-    // }
-    
-    
-    // const handleSubmit = async (event) => {
-    //     event.preventDefault();
-    //     try {
-    //         const ApiPutService = await HTTPService().ApiPutService(url, item, State.id);
-    //         setItem(ApiPutService);
-    //     } catch (error) {
-    //         console.log(error);
-
-    //     }
-    // };
-    
-    const handleSubmit = async (event) => {
+    function handleSubmit(event) {
         event.preventDefault();
-        try {
-            const response = await fetch(item.url);
-            if (response.ok) {
-                const data = await response.json();
-                let temp_item = item;
-                temp_item["title"] = data.title;
-                temp_item["author"] = data.author;
-                temp_item["poem"] = data.poem;
-                setItem(temp_item);
-                State ? await HTTPService().ApiPutService(url, temp_item, State.id) : await HTTPService().ApiPostService(url, temp_item);
-                notify();
-                setIsSubmitted(true);
-            } else {
-                console.log("Error fetching data from URL");
-            }
-        } catch (error) {
-            console.log(error);
-        }
-    };
-
+        State ? HTTPService().ApiPutService(item, State.id) : HTTPService().ApiPostService(item)
+        notify()
+        setIsSubmitted(true)
+    }
+    
     
     useEffect(()=>{
         if (State) {
