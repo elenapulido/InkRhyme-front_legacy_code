@@ -1,9 +1,26 @@
-import React from "react";
 import "./HeartButton.css";
+import React, { useState } from 'react';
 
-const HeartButton = () => {
+
+function HeartButton() {
+    const [count, setCount] = useState(0);
+
     return (
-        <div className="favHeart">
+        <div>
+        <input id="toggle-heart" type="checkbox"/>
+        <label for="toggle-heart" aria-label="like">❤</label>
+        </div>
+    )
+   
+  /*   <div>
+        <p>You clicked {count} times</p>
+        <button className="like" onClick={() => setCount(count + 1)}>
+        <label for="toggle-heart" aria-label="like">❤</label> Like
+        </button>
+      </div> */
+
+
+        /* <div className="favHeart">
             <input type="checkbox" className="checkbox" id="checkbox" />
             <label for="checkbox">
                 <svg id="heart-svg" viewBox="467 392 58 57" xmlns="http://www.w3.org/2000/svg">
@@ -50,6 +67,9 @@ const HeartButton = () => {
             </label>
         </div>
     );
-};
+}; */
+
+
+}
 
 export default HeartButton;

@@ -9,7 +9,7 @@ import Footer from '../../Components/Footer/Footer';
 import ButtonUp from '../../Components/ButtonUp/ButtonUp';
 
 function MainPage() {
-  const url = "http://localhost:8080/api/v1/poems"
+  const url = "http://localhost:8090/api/v1/poems"
   const [data, setData] = useState([]);
 
   useEffect(() => {

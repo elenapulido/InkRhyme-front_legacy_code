@@ -12,7 +12,7 @@ import save from '../../Assets/Img/save.png'
 import { BiLeftTopArrowCircle } from "react-icons/ai";
 
 function Form() {
-    let url = "http://localhost:8080/api/v1/poems"
+    let url = "http://localhost:8090/api/v1/poems"
     const categories = ['Romántico heterosexual', 'Romántico homosexual', 'Elegía', 'Epigrama', 'Fantasía'];
     let [item, setItem] = useState({ genre: categories[0] })
     let [isSubmitted, setIsSubmitted] = useState(false)
