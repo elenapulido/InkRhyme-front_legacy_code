@@ -6,16 +6,17 @@ import HTTPService from "../../Services/HTTPService";
 import HeartButton from "../HeartButton/HeartButton";
 
 function Article() {
+  const idInState = useLocation().state.id
   const [data, setData] = useState({});
-  const idState = useLocation().state.id
   const navigate = useNavigate();
 
   useEffect(() => {
-    HTTPService().ApiGetbyIdService(idState)
+    HTTPService().ApiGetbyIdService(idInState)
     .then((data) => setData(data))
     .catch((error) => console.error(error));
   }, []);
 
+  
   const handleDelete = () => {
     if (window.confirm("¿Está seguro de que desea eliminar este elemento?")) {
       HTTPService().ApiDeleteService(data.id)
@@ -41,7 +42,7 @@ function Article() {
             <button onClick={handleDelete}>
               <AiFillDelete className="article-icon" size={25} color="black"/>
             </button>
-            <button onClick={() => {navigate("/Form", {state: {id: idState}})}}>
+            <button onClick={() => {navigate("/Form", {state: {id: idInState}})}}>
               <AiFillEdit className="article-icon" size={25} color="black"/>
             </button>
           </div>
