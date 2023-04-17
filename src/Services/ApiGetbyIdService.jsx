@@ -6,4 +6,3 @@ async function ApiGetbyIdService(url, id){
 }
 
 export default ApiGetbyIdService;
-

@@ -1,14 +1,12 @@
 import "./ButtonUp.css" 
 import {AiOutlineCaretUp} from "react-icons/ai"
 
-
 function ButtonUp (){
 
 const scrollToHeader = () => {
     const header = document.getElementById('headerId');
     header.scrollIntoView({ behavior: 'smooth' });
   }
-
 
 return (
 

@@ -7,15 +7,11 @@ import { useLocation, useNavigate } from "react-router-dom";
 import ApiDeleteService from "../../Services/ApiDeleteService";
 import HeartButton from "../HeartButton/HeartButton";
 
-
 function Article() {
   const url = "http://localhost:8080/api/v1/poems"
   const idInState = useLocation().state.id
   const [data, setData] = useState([{}]);   
   const navigate = useNavigate()
-
-
-
   
   useEffect(() => {
     ApiGetbyIdService(url, idInState)

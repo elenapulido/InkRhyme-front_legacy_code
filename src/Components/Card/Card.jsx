@@ -2,12 +2,9 @@ import React from 'react'
 import { Navigate, useNavigate } from 'react-router-dom'
 import './Card.css'
 
-
-
 const Card = ({id, title, url}) => {
   
   let navigate = useNavigate()
-
 
   return (
     

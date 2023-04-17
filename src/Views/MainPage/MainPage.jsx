@@ -1,6 +1,6 @@
-
-import Card from '../../Components/Card/Card';
+import React from 'react'
 import './MainPage.css';
+import Card from '../../Components/Card/Card';
 import { useEffect, useState } from 'react';
 import ApiGetService from '../../Services/ApiGetService';
 import Header from '../../Components/Header/Header'

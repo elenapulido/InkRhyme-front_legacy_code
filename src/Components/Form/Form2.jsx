@@ -10,12 +10,14 @@ import ApiPutService from '../../Services/ApiPutService';
 import {useLocation, useNavigate } from 'react-router-dom';
 
 
-function Form() {
-    let url = "http://localhost:8080/api/v1/poems"
+function Form2() {
+    const url = "http://localhost:8080/api/v1/poems"
     const categories = ['Romántico heterosexual', 'Romántico homosexual', 'Elegía', 'Epigrama', 'Fantasía'];
-    let [item, setItem] = useState({ genre: categories[0] })
-    let [isSubmitted, setIsSubmitted] = useState(false)
+    const [item, setItem] = useState({ genre: categories[0] })
+    const [isSubmitted, setIsSubmitted] = useState(false)
     const State = useLocation().state
+
+    const [title, setTitle] = useState('');
 
     const notify = () => toast('Poema añadido!');
 
@@ -39,16 +41,16 @@ function Form() {
 
     function handleSubmit(event) {
         event.preventDefault();
-        State ? ApiPutService(url, item, State.id) : ApiPostService(url, item)
+        State ? ApiPutService(url, item, title, State.id) : ApiPostService(url, item)
         notify()
         setIsSubmitted(true)
     }
 
-    // useEffect(()=>{
-    //     if (State) {
+    useEffect(()=>{
+        if (State) {
             
-    //     }
-    // })
+        }
+    })
 
     return (
         <div className='FormPage-Form'>
@@ -70,7 +72,9 @@ function Form() {
                     <div className='Form-row'>
                         <label>Título:</label>
                         <div className="form-row-div">
-                            <input type="text" name="title" onChange={handleChange} id="" placeholder="Título" required />
+                            {/* <input type="text" name="title" onChange={handleChange} id="" placeholder="Título" required /> */}
+
+                            <input onChange={(event) => { setTitle(event.target.value) }} placeholder='Título poema' type="text"></input>
                         </div>
                     </div>
                     <div className='Form-row'>
@@ -95,4 +99,4 @@ function Form() {
     )
 }
 
-export default Form
+export default Form2

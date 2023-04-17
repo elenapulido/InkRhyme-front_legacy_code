@@ -6,4 +6,3 @@ async function ApiGetService(url){
 }
 
 export default ApiGetService;
-
