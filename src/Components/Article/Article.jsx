@@ -8,10 +8,24 @@ import ApiDeleteService from "../../Services/ApiDeleteService";
 import HeartButton from "../HeartButton/HeartButton";
 
 function Article() {
-  const url = "http://localhost:8080/api/v1/poems"
   const idInState = useLocation().state.id
-  const [data, setData] = useState([{}]);   
-  const navigate = useNavigate()
+  const [data, setData] = useState({});
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    HTTPService().ApiGetbyIdService(idInState)
+    .then((data) => setData(data))
+    .catch((error) => console.error(error));
+  }, []);
+
+  
+  const handleDelete = () => {
+    if (window.confirm("¿Está seguro de que desea eliminar este elemento?")) {
+      HTTPService().ApiDeleteService(data.id)
+        .then(() => navigate("/"))
+        .catch(console.error);
+    }
+  };
   
   useEffect(() => {
     ApiGetbyIdService(url, idInState)
@@ -28,9 +42,12 @@ function Article() {
           <p className="article-author">Author: {data.author}</p>
           <p className="article-category">{data.genre}</p>
           <div className="article-icons">
-            <a href="/"><AiFillDelete onClick={() => {ApiDeleteService(url, idInState)}} className="article-icon" size={25} color="black"/></a>
-            <AiFillEdit onClick={() => {navigate("/Form", {state: {id: idInState}})}} className="article-icon" size={25} color="black"/>
-            
+            <button onClick={handleDelete}>
+              <AiFillDelete className="article-icon" size={25} color="black"/>
+            </button>
+            <button onClick={() => {navigate("/Form", {state: {id: idInState}})}}>
+              <AiFillEdit className="article-icon" size={25} color="black"/>
+            </button>
           </div>
           <HeartButton/>
         </div>
