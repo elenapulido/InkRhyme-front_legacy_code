@@ -12,7 +12,7 @@ function HeartButton() {
 
     return (
         <div>
-            <p>You clicked {count} times</p>
+            <p> {count} </p>
             <input id="toggle-heart" type="checkbox"/>
             <label for="toggle-heart" aria-label="like" onClick={() => setCount(count+1)}>❤</label>
                    
