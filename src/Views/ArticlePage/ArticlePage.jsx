@@ -10,7 +10,7 @@ function ArticlePage() {
             <Header />
             <Navbar />
             <Article />
-            <Footer />
+            <Footer />            
         </>
     )
 }

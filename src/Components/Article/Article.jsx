@@ -1,10 +1,8 @@
 import { useState, useEffect } from "react";
-import ApiGetbyIdService from "../../Services/ApiGetbyIdService";
-import ApiGetService from "../../Services/ApiGetService";
 import { AiFillDelete, AiFillEdit } from "react-icons/ai"
 import "./Article.css";
 import { useLocation, useNavigate } from "react-router-dom";
-import ApiDeleteService from "../../Services/ApiDeleteService";
+import HTTPService from "../../Services/HTTPService";
 import HeartButton from "../HeartButton/HeartButton";
 
 function Article() {
@@ -27,11 +25,10 @@ function Article() {
     }
   };
   
-  useEffect(() => {
-    ApiGetbyIdService(url, idInState)
-      .then((data) => setData(data))
-      .catch((error) => console.error(error));
-  }, []);
+//   const handleEdit = (id) => {
+//     const dataToEdit = data.find(d => d.id === id);
+//     setEditingData(dataToEdit);
+// }
 
   return (
     <div className="article-body">
@@ -49,13 +46,11 @@ function Article() {
               <AiFillEdit className="article-icon" size={25} color="black"/>
             </button>
           </div>
-          <HeartButton/>
+         <HeartButton /> 
         </div>
       </div>
       <div className="article-poem-container">
-        <p className="article-poem">
-        {data.poem}
-        </p>
+        <p className="article-poem">{data.poem}</p>
       </div>
     </div>
   );

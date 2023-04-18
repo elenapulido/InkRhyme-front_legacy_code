@@ -1,23 +1,21 @@
 import React, { useEffect, useState } from 'react'
 import toast, { Toaster } from 'react-hot-toast';
-import ApiGetService from '../../Services/ApiGetService'
+import HTTPService from '../../Services/HTTPService'
 import "./Form.css"
 import { CiSaveUp1 } from "react-icons/ci";
 import { IoMdReturnLeft } from "react-icons/io";
-import ApiPostService from '../../Services/ApiPostService';
 import CategoryInput from '../CategoryInput/CategoryInput';
-import ApiPutService from '../../Services/ApiPutService';
-import {useLocation, useNavigate } from 'react-router-dom';
+import {useLocation } from 'react-router-dom';
 
 
 function Form() {
-    let url = "http://localhost:8080/api/v1/poems"
+    
     const categories = ['Romántico heterosexual', 'Romántico homosexual', 'Elegía', 'Epigrama', 'Fantasía'];
     let [item, setItem] = useState({ genre: categories[0] })
     let [isSubmitted, setIsSubmitted] = useState(false)
     const State = useLocation().state
 
-    const notify = () => toast('Poema añadido!');
+    const notify = () => toast('Poema añadido! ');
 
     const [selectedCategory, setSelectedCategory] = useState(categories[0]);
 
@@ -39,16 +37,17 @@ function Form() {
 
     function handleSubmit(event) {
         event.preventDefault();
-        State ? ApiPutService(url, item, State.id) : ApiPostService(url, item)
+        State ? HTTPService().ApiPutService(item, State.id) : HTTPService().ApiPostService(item)
         notify()
         setIsSubmitted(true)
     }
-
-    // useEffect(()=>{
-    //     if (State) {
+    
+    
+    useEffect(()=>{
+        if (State) {
             
-    //     }
-    // })
+        }
+    })
 
     return (
         <div className='FormPage-Form'>
@@ -64,7 +63,7 @@ function Form() {
                     <div className='Form-row'>
                         <label>URL de la imagen:</label>
                         <div className="form-row-div">
-                            <input type="url" name="url" onChange={handleChange} autoComplete="off" placeholder="Url de la imagen" required pattern="https?://.+" />
+                            <input type="url" name="url" onChange={handleChange} autoComplete="off" placeholder="Url de la Imagén" required pattern="https?://.+" />
                         </div>
                     </div>
                     <div className='Form-row'>
