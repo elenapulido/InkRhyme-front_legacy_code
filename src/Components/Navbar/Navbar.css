@@ -88,3 +88,7 @@
   .drop-inactive{
     display: none !important ;
   }
+
+  .fondo{
+    background-color: #77578b;
+  }

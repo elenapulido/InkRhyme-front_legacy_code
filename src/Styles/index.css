@@ -1,15 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&display=swap');
 
   body {
-  display: flex;
-  margin: 0;
-  padding: 0;
-  font-family: 'Jost', 'Segoe UI', 'Roboto', 'Oxygen',
+    display: flex;
+    margin: 0;
+    padding: 0;
+    font-family: 'Jost', 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background-color: #d5b8e7;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #d5b8e7; 
+    
+
+
+  
   /* width: 375px;
   height: 812px; */
 }

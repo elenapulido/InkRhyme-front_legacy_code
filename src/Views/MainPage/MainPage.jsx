@@ -7,6 +7,7 @@ import Header from '../../Components/Header/Header'
 import Navbar from '../../Components/Navbar/Navbar'
 import Footer from '../../Components/Footer/Footer';
 import ButtonUp from '../../Components/ButtonUp/ButtonUp';
+import Navbar1 from '../../Components/Navbar/Navbar1';
 
 function MainPage() {
   const url = "http://localhost:8080/api/v1/poems"
@@ -20,8 +21,8 @@ function MainPage() {
 
   return (
     <div>
-      <Header />
-      <Navbar />
+       <Header />
+      <Navbar1 />
       {JSON.stringify(data) !== JSON.stringify([]) ?
         data.map((item) => (
           <Card key={item.id} id={item.id} title={item.title} url={item.url} />
