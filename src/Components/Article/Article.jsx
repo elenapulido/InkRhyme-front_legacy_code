@@ -20,6 +20,8 @@ function Article() {
   const [data, setData] = useState({});
   const navigate = useNavigate();
 
+  const [editingData, setEditingData] = useState(null);
+
   useEffect(() => {
     HTTPService().ApiGetbyIdService(idInState)
     .then((data) => setData(data))
@@ -36,6 +38,11 @@ function Article() {
   };
 
   const handleEdit = (id) => {
+    if (!Array.isArray(data)) {
+      console.log("data no es un array!");
+      return;
+    }
+  
     const dataToEdit = data.find(d => d.id === id);
     setEditingData(dataToEdit);
   }
@@ -77,6 +84,7 @@ function Article() {
 
               <Button variant="outlined" color="neutral" onClick={handleDelete} size="sm">Borrar</Button>
               <Button variant="outlined" color="neutral" onClick={() => handleEdit(data.id)} size="sm">Editar</Button>
+              <Button variant="outlined" color="neutral" onClick={() => {window.location.href = "/"}}>Cancelar</Button>
               <HeartButton />
             </div>
           </Card>

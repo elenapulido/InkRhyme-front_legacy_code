@@ -9,11 +9,11 @@ import Footer2 from '../../Components/Footer/Footer2'
 function FormPage() {
   return (
     <div className='FormPage'>
-      {/* <Header />
+      <Header />
       <Navbar />
       <Form />
-      <Footer /> */}
-      <Footer2 />      
+      <Footer />
+      {/* <Footer2 />       */}
     </div>
   )
 }

@@ -13,12 +13,9 @@ import React from 'react';
 // import Typography from '@mui/joy/Typography';
 
 
-function Body() {
-    
+function Body() {    
 
-    const [data, setData] = useState([]);
-   
-   
+    const [data, setData] = useState([]);   
 
     useEffect(() => {
         HTTPService().ApiGetService()
@@ -36,7 +33,6 @@ function Body() {
                 :
                 <h3>Cargando poemas...</h3>
             }
-
 
         </div>
     )

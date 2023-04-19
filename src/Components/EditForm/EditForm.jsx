@@ -8,9 +8,7 @@ const EditForm = ({ data, setData, onCancel }) => {
     const handleInputChange = (event) => {
         const { name, value } = event.target;
         setEditedData({ ...editedData, [name]: value });
-
     };
-
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -19,10 +17,8 @@ const EditForm = ({ data, setData, onCancel }) => {
             setData(updatedData);
         } catch (error) {
             console.log(error);
-
         }
     };
-
 
     return (
         <div className='main-form'>
@@ -59,7 +55,7 @@ const EditForm = ({ data, setData, onCancel }) => {
                 
                 <div>
                     <Button type="submit" content='Enviar' icon='like'></Button>
-                    <Button type="submit" content='Volver' icon='cancel' href='/leyendas' onClick={onCancel}></Button>
+                    <Button type="submit" content='Volver' icon='cancel' onClick={() => {window.location.href = "/"}}></Button>
                 </div>
             </Form>
         </div>
