@@ -10,7 +10,7 @@ import {useLocation } from 'react-router-dom';
 
 function Form() {
     
-    const categories = ['Romántico heterosexual', 'Romántico homosexual', 'Elegía', 'Epigrama', 'Fantasía'];
+    const categories = ['Lírica', 'Épica', 'Dramática', 'Romántica'];
     let [item, setItem] = useState({ genre: categories[0] })
     let [isSubmitted, setIsSubmitted] = useState(false)
     const State = useLocation().state
