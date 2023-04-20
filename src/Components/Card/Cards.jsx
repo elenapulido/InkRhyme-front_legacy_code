@@ -1,5 +1,5 @@
 import { Navigate, useNavigate } from 'react-router-dom'
-import * as React from 'react';
+import React from 'react';
 import AspectRatio from '@mui/joy/AspectRatio';
 import Avatar from '@mui/joy/Avatar';
 import Box from '@mui/joy/Box';

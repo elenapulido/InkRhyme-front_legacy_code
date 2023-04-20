@@ -1,38 +1,54 @@
-import React, { useState } from 'react'
-import "./Navbar.css"
-import Plus from '../../Assets/Img/Plus.png'
-import Hamburguer from '../../Assets/Img/Hamburguer.png'
+import React from 'react'
 import { Link } from 'react-router-dom'
+import Plus from '../../Assets/Img/Plus.png'
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import Offcanvas from 'react-bootstrap/Offcanvas';
+import "./Navbar.css"
 
-const Navbar = () => {
-  const [showMenu, setShowMenu] = useState(false);
-
-  const handleClick = () => {
-    setShowMenu(!showMenu);
-  }
+function Navbar1() {
 
   const scrollToFooter = () => {
     const footer = document.getElementById('footer');
     footer.scrollIntoView({ behavior: 'smooth' });
   }
+  return (
 
-  return (   
-    <nav className='navigation'>
-      <button className='plus-btn'>
-        <Link  to="/Form"><img className='plusNavigation' src={Plus} alt='Plus Menu'/></Link>
-      </button>
-      <button className='hamburger-btn' onClick={handleClick}>
-        <img src={Hamburguer} alt='Hamburguer Menu' />
-      </button>
-      <ul className={`menu ${showMenu ? 'show' : ''}`}>
-      <Link  to="/" className='link-a'><li>Inicio</li></Link>
-        <li>Explora</li>
-        <li>Buscar</li>
-        <li onClick={scrollToFooter}>Conócenos</li>
-      </ul>
-    </nav> 
-  );
+    
+        <div>
+     
+     <Navbar bg="bg-secondary" expand='md' className="mb-3 navigation">
+       <Container fluid>
+         <Navbar.Brand href="/Form">
+        <img className='plusNavigation' src={Plus} alt='Plus Menu'/></Navbar.Brand>
+         <Navbar.Toggle aria-controls="offcanvasNavbar-expand" />
+         <Navbar.Offcanvas
+           id="offcanvasNavbar-expand"
+           aria-labelledby="offcanvasNavbarLabel-expand"
+           placement="end" className="bg-secondary"
+         >
+           <Offcanvas.Header closeButton>
+             <Offcanvas.Title id="offcanvasNavbarLabel-expand">
+              
+             </Offcanvas.Title>
+           </Offcanvas.Header>
+           <Offcanvas.Body>
+             <Nav className="justify-content-end flex-grow-1 pe-3">
+               <Nav.Link className="text-white" href="/">Inicio</Nav.Link>
+               <Nav.Link className="text-white" href="/Form">Buscar</Nav.Link>  
+               <Nav.Link className="text-white" href="/Login">Login</Nav.Link>
+               <Nav.Link className="text-white" href="/Register">Sign Up</Nav.Link>
+               <Nav.Link className="text-white" href="#action3" onClick={scrollToFooter}>Conócenos</Nav.Link>              
+             </Nav>                
+           </Offcanvas.Body>
+         </Navbar.Offcanvas>
+       </Container>
+     </Navbar>   
+
+ </div>  
+  )
 }
 
-export default Navbar;
+export default Navbar1;
 

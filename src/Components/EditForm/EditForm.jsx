@@ -2,8 +2,10 @@ import React, { useState } from "react";
 import { Button, Form, TextArea } from 'semantic-ui-react';
 import HTTPService from "../../Services/HTTPService";
 
-const EditForm = ({ data, setData, onCancel }) => {
+
+const EditForm = ({ data, setData}) => {
     const [editedData, setEditedData] = useState({ ...data });
+   
 
     const handleInputChange = (event) => {
         const { name, value } = event.target;
@@ -59,7 +61,7 @@ const EditForm = ({ data, setData, onCancel }) => {
                 
                 <div>
                     <Button type="submit" content='Enviar' icon='like'></Button>
-                    <Button type="submit" content='Volver' icon='cancel' href='/leyendas' onClick={onCancel}></Button>
+                    <Button type="submit" content='Volver' icon='cancel' onClick={() => {window.location.href = "/"}}></Button>
                 </div>
             </Form>
         </div>

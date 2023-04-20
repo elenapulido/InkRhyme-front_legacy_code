@@ -3,7 +3,7 @@ import "./Article.css";
 import { useLocation, useNavigate } from "react-router-dom";
 import HTTPService from "../../Services/HTTPService";
 import HeartButton from "../HeartButton/HeartButton";
-import * as React from 'react';
+import React from 'react';
 import AspectRatio from '@mui/joy/AspectRatio';
 import Link from '@mui/joy/Link';
 import Card from '@mui/joy/Card';
@@ -14,10 +14,12 @@ import Box from '@mui/joy/Box';
 import EditForm from "../EditForm/EditForm";
 
 
+
 function Article() {
   const idInState = useLocation().state.id
   const [data, setData] = useState({});
   const navigate = useNavigate();
+  const [editingData, setEditingData] = useState(null);
 
   useEffect(() => {
     HTTPService().ApiGetbyIdService(idInState)

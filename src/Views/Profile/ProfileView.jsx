@@ -3,19 +3,19 @@ import Header from '../../Components/Header/Header'
 import Navbar from '../../Components/Navbar/Navbar'
 import Footer from '../../Components/Footer/Footer';
 import ButtonUp from '../../Components/ButtonUp/ButtonUp';
-import Body from '../../Components/Body/Body';
+import Profile from '../../Components/LoginComponents/Profile';
 
- function MainPage() {
+ function ProfileView() {
 
   return (
     <div>
       <Header />
       <Navbar />
-      <Body />
+      <Profile />
       <ButtonUp />
       <Footer />
     </div>
   )
 }
 
-export default MainPage;
+export default ProfileView;
