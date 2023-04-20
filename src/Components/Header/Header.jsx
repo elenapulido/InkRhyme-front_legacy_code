@@ -5,10 +5,15 @@ import "./Header.css"
 
 const Header = () => {
     return (   
-       <div id='headerId' className='header'>
-        <Link className="logo" to="/"><img className='logo' src={Logo}/></Link> 
-       </div>
-       
+    <div  id='headerId' className='header'>
+
+    <div class="container">
+    <header class="d-flex justify-content-center py-3">    
+        <Link className="logo" to="/"><img className='logo' src={Logo}/></Link>
+    </header>
+    </div>
+
+    </div>
     );
 }
 

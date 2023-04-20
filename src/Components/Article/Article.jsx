@@ -48,7 +48,7 @@ function Article() {
   }
 
   return (
-    <>
+    <div className="container">
       {editingData ? (
         <div>
           <EditForm data={editingData} onSubmit={handleEdit} onCancel={handleEdit} />
@@ -91,7 +91,7 @@ function Article() {
           </Card>
         </div>
       )}
-    </>
+    </div>
   );
 }
 
