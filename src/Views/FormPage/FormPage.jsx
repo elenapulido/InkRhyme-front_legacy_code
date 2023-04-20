@@ -1,5 +1,5 @@
 import React from 'react'
-import Form2 from '../../Components/Form/Form2'
+import Form from '../../Components/Form/Form'
 import Footer from '../../Components/Footer/Footer'
 import Header from '../../Components/Header/Header'
 import Navbars from '../../Components/Navbar/Navbars'
@@ -10,7 +10,7 @@ function FormPage() {
     <div className='FormPage'>
       <Header />     
       <Navbars />  
-      <Form2 />
+      <Form />
       <Footer />  
     </div>
   )

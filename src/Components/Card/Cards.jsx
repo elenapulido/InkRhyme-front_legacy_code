@@ -1,6 +1,4 @@
 import { Navigate, useNavigate } from 'react-router-dom'
-//import './Card.css'
-
 import * as React from 'react';
 import AspectRatio from '@mui/joy/AspectRatio';
 import Avatar from '@mui/joy/Avatar';
@@ -12,26 +10,11 @@ import IconButton from '@mui/joy/IconButton';
 import Input from '@mui/joy/Input';
 import Typography from '@mui/joy/Typography';
 
-
-
-
 const Cards = ({ id, title, url , author, poem}) => {
 
-    let navigate = useNavigate()
-    
+    let navigate = useNavigate()  
    
-   
-return (
-
-    //     <div>
-             
-    //   <div className='cardContainer'>
-    //     <div className='cardImage'>
-    //       <img src={url} alt='' />
-    //     </div>
-    //     <h3 onClick={() => { navigate("/Article", { state: { id } }) }} className='cardText'>{title}</h3>
-    //   </div>
-    // </div>
+return (   
      
      <>
          <Card key={id} onClick={() => { navigate("/Article", { state: { id } }) }} variant="outlined" sx={{ minWidth: 300, '--Card-radius': (theme) => theme.vars.radius.xs, }}>
@@ -75,9 +58,7 @@ return (
 
                   <CardOverflow sx={{ p: 'var(--Card-padding)', display: 'flex' }}>
                        <Input variant="plain" size="sm" placeholder="Add a comment…" sx={{ flexGrow: 1, mr: 1, '--Input-focusedThickness': '0px' }} />
-                        <Link disabled underline="none" role="button">
-                            Post
-                        </Link>
+                        
                     </CardOverflow>
 
               </Card> 

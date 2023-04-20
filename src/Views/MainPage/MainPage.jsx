@@ -11,7 +11,7 @@ import Navbars from '../../Components/Navbar/Navbars';
       <Header />    
       <Navbars />
       <Body />
-      <ButtonUp />
+      <ButtonUp />   
       <Footer />
     </div>
   )

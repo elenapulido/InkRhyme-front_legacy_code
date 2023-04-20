@@ -9,7 +9,7 @@ function ArticlePage() {
         <>
             <Header />
             <Navbars />
-            <Article />
+            <Article />            
             <Footer />                   
         </>
     )
