@@ -12,10 +12,9 @@
     position: fixed;
     z-index: 1;
     border: none;
-
 }
+
 .divButtonUp {
    display: flex;
-   justify-content: end;
-   
+   justify-content: flex-end;   
 }

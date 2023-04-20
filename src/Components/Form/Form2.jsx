@@ -1,25 +1,20 @@
 import React, { useEffect, useState } from 'react'
 import toast, { Toaster } from 'react-hot-toast';
-import ApiGetService from '../../Services/ApiGetService'
-import "./Form.css"
-import { CiSaveUp1 } from "react-icons/ci";
+import HTTPService from '../../Services/HTTPService'
 import { IoMdReturnLeft } from "react-icons/io";
-import ApiPostService from '../../Services/ApiPostService';
 import CategoryInput from '../CategoryInput/CategoryInput';
-import ApiPutService from '../../Services/ApiPutService';
-import {useLocation, useNavigate } from 'react-router-dom';
-
+import {useLocation } from 'react-router-dom';
+import { Button, Form, TextArea } from 'semantic-ui-react';
+import "./Form2.css"
 
 function Form2() {
-    const url = "http://localhost:8080/api/v1/poems"
-    const categories = ['Romántico heterosexual', 'Romántico homosexual', 'Elegía', 'Epigrama', 'Fantasía'];
-    const [item, setItem] = useState({ genre: categories[0] })
-    const [isSubmitted, setIsSubmitted] = useState(false)
+    
+    const categories = ['Lírica', 'Épica', 'Dramática', 'Romántica'];
+    let [item, setItem] = useState({ genre: categories[0] })
+    let [isSubmitted, setIsSubmitted] = useState(false)
     const State = useLocation().state
 
-    const [title, setTitle] = useState('');
-
-    const notify = () => toast('Poema añadido!');
+    const notify = () => toast('Poema añadido! ');
 
     const [selectedCategory, setSelectedCategory] = useState(categories[0]);
 
@@ -41,11 +36,11 @@ function Form2() {
 
     function handleSubmit(event) {
         event.preventDefault();
-        State ? ApiPutService(url, item, title, State.id) : ApiPostService(url, item)
+        State ? HTTPService().ApiPutService(item, State.id) : HTTPService().ApiPostService(item)
         notify()
         setIsSubmitted(true)
-    }
-
+    }    
+    
     useEffect(()=>{
         if (State) {
             
@@ -53,7 +48,7 @@ function Form2() {
     })
 
     return (
-        <div className='FormPage-Form'>
+        <div className='main-form'>
             <Toaster />
             {isSubmitted ?
                 <>
@@ -61,38 +56,30 @@ function Form2() {
                     <button className='b-return' onClick={() => {window.location.href = "/"}}><IoMdReturnLeft /></button>
                 </>
                 :
-                <form onSubmit={handleSubmit} method="post">
-                    <button className='b-post'><CiSaveUp1  /></button>
-                    <div className='Form-row'>
-                        <label>URL de la imagen:</label>
-                        <div className="form-row-div">
-                            <input type="url" name="url" onChange={handleChange} autoComplete="off" placeholder="Url de la imagen" required pattern="https?://.+" />
-                        </div>
-                    </div>
-                    <div className='Form-row'>
-                        <label>Título:</label>
-                        <div className="form-row-div">
-                            {/* <input type="text" name="title" onChange={handleChange} id="" placeholder="Título" required /> */}
-
-                            <input onChange={(event) => { setTitle(event.target.value) }} placeholder='Título poema' type="text"></input>
-                        </div>
-                    </div>
-                    <div className='Form-row'>
+                <Form className='create-form' onSubmit={handleSubmit} method="post">                    
+                    <Form.Field>
+                        <label>URL de la imagen:</label>                        
+                            <input type="url" name="url" onChange={handleChange} autoComplete="off" placeholder="URL de la imagen" required pattern="https?://.+" />                       
+                    </Form.Field>
+                    <Form.Field>
+                        <label>Título:</label>                        
+                            <input type="text" name="title" onChange={handleChange} id="" placeholder="Título" required />                        
+                    </Form.Field>
+                    <Form.Field>
                         <label>Género:</label>
                         <CategoryInput categories={categories} selectedcategory={selectedCategory} onSelectedcategoryChange={handleSelectedCategoryChange} />
-
-                    </div>
-                    <div className='Form-row'>
-                        <label>Autor:</label>
-                        <div className="form-row-div">
-                            <input type="text" name="author" onChange={handleChange} id="" placeholder="Autor" required />
-                        </div>
-                    </div>
-                    <div className='Form-ta'>
+                    </Form.Field>
+                    <Form.Field>
+                        <label>Autor:</label>                        
+                            <input type="text" name="author" onChange={handleChange} id="" placeholder="Autor" required />                        
+                    </Form.Field>
+                    <Form.Field>
                         <label>Tu Poema:</label>
-                        <textarea rows="8" type="text" onChange={handleChange} name="poem" id="" required />
-                    </div>
-                </form>
+                        <TextArea rows={8} type="text" onChange={handleChange} name="poem" id="" required />
+                    </Form.Field>
+                    <Button type="submit" content='Enviar' icon='like' ></Button>
+                    <Button type="submit" content='Cancelar' icon='cancel' onClick={() => {window.location.href = "/"}}></Button>
+                </Form>
             }
 
         </div>

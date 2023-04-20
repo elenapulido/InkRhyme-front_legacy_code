@@ -1,19 +1,17 @@
 import React from 'react'
-// import "./FormPage.css"
-import Form from '../../Components/Form/Form'
+import Form2 from '../../Components/Form/Form2'
 import Footer from '../../Components/Footer/Footer'
 import Header from '../../Components/Header/Header'
 import Navbar from '../../Components/Navbar/Navbar'
-import Footer2 from '../../Components/Footer/Footer2'
+import "./FormPage.css"
 
 function FormPage() {
   return (
     <div className='FormPage'>
       <Header />
       <Navbar />
-      <Form />
-      <Footer />
-      {/* <Footer2 />       */}
+      <Form2 />
+      <Footer />  
     </div>
   )
 }

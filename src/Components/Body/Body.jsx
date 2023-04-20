@@ -12,7 +12,6 @@ import React from 'react';
 // import Input from '@mui/joy/Input';
 // import Typography from '@mui/joy/Typography';
 
-
 function Body() {    
 
     const [data, setData] = useState([]);   
@@ -24,6 +23,7 @@ function Body() {
     }, []);
 
     return (
+        <div className='container'>
         <div className="body-view">
             {JSON.stringify(data) !== JSON.stringify([]) ?
                 data.map((item) => (
@@ -34,6 +34,7 @@ function Body() {
                 <h3>Cargando poemas...</h3>
             }
 
+        </div>
         </div>
     )
 }

@@ -7,20 +7,18 @@
   .dropdown__header, .form-row-div {
     padding: 1px;
     
-    background-color: #9c64be;
+    /* background-color: #9c64be; */
     color: #000000;
    
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
     align-items: center;
   }
   
-  .dropdown__header svg {
-    
+  .dropdown__header svg {    
     position: absolute;
     margin: 0;
     width: 6vw;
-
   }
   
   .dropdown__categories {
@@ -37,15 +35,13 @@
     border: 1px solid #ccc;
     z-index: 1;
     list-style-type: none;
-
   }
   
   .dropdown__category {
     padding: 5px;
     cursor: pointer;
     transition: background-color 0.2s ease-in-out;
-    background-color: #9c64be;
-   
+    background-color: #9c64be;   
   }
   
   .dropdown__category:hover,
