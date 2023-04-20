@@ -101,6 +101,7 @@ const Register = () => {
   };
 
   return (
+    <div className="container">
     <div className="col-md-12">
       <div className="card card-container">
         <img
@@ -170,6 +171,7 @@ const Register = () => {
           <CheckButton style={{ display: "none" }} ref={checkBtn} />
         </Form>
       </div>
+    </div>
     </div>
   );
 

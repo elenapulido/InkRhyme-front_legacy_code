@@ -7,6 +7,10 @@ import MainPage from './Views/MainPage/MainPage';
 import Login from './Views/Login/LoginView';
 import Profile from './Views/Profile/ProfileView';
 import Register from './Views/Register/RegisterView';
+import BoardUser from './Views/BoardUser/BoardUser';
+import BoardModerator from './Views/BoardModerator/BoardModerator';
+import BoardAdmin from './Views/BoardAdmin/BoardAdmin';
+
 
 const App = () => {
   const router = createBrowserRouter([{
@@ -27,6 +31,15 @@ const App = () => {
     },{
       path: "/Register",
       element: <Register />
+    },{
+      path: "/user",
+      element: <BoardUser />
+    },{
+      path: "/mod",
+      element: <BoardModerator />
+    },{
+      path: "/admin",
+      element: <BoardAdmin />
     },
   ]);
   return (
