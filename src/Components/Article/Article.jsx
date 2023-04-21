@@ -36,16 +36,17 @@ function Article() {
     }
   };
 
-  const handleEdit = (id) => {
-    const dataToEdit = data.find(d => d.id === id);
-    setEditingData(dataToEdit);
+ 
+
+  const handleEdit = () => {
+    setEditingData(true);
   }
 
   return (
     <>
       {editingData ? (
         <div>
-          <EditForm data={editingData} onSubmit={handleEdit} onCancel={handleEdit} />
+          <EditForm data={data} onSubmit={handleEdit} />
         </div>
       ) : (
         <div>
