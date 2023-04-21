@@ -72,10 +72,8 @@ function Article() {
               </Typography>
 
               <Typography fontSize="sm" aria-describedby="card-description" mb={1}>
-                <Link overlay underline="none" href="#interactive-card" sx={{ color: 'text.tertiary' }} >
-                  {data.poem}
-                </Link>
-              </Typography>
+                {data.poem}
+               </Typography>
 
               <Button variant="outlined" color="neutral" onClick={handleDelete} size="sm">Borrar</Button>
               <Button variant="outlined" color="neutral" onClick={() => handleEdit(data.id)} size="sm">Editar</Button>
