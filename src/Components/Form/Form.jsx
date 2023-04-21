@@ -1,19 +1,16 @@
 import React, { useEffect, useState } from 'react'
 import toast, { Toaster } from 'react-hot-toast';
-import ApiGetService from '../../Services/ApiGetService'
+import HTTPService from '../../Services/HTTPService'
 import "./Form.css"
 import { CiSaveUp1 } from "react-icons/ci";
 import { IoMdReturnLeft } from "react-icons/io";
-import ApiPostService from '../../Services/ApiPostService';
 import CategoryInput from '../CategoryInput/CategoryInput';
-import ApiPutService from '../../Services/ApiPutService';
-import {useLocation, useNavigate } from 'react-router-dom';
-import save from '../../Assets/Img/save.png'
-import { BiLeftTopArrowCircle } from "react-icons/ai";
+import {useLocation } from 'react-router-dom';
+
 
 function Form() {
-    let url = "http://localhost:8090/api/v1/poems"
-    const categories = ['Romántico heterosexual', 'Romántico homosexual', 'Elegía', 'Epigrama', 'Fantasía'];
+    
+    const categories = ['Romántica', 'Epica', 'Gramática', 'Lirica'];
     let [item, setItem] = useState({ genre: categories[0] })
     let [isSubmitted, setIsSubmitted] = useState(false)
     const State = useLocation().state
@@ -40,11 +37,12 @@ function Form() {
 
     function handleSubmit(event) {
         event.preventDefault();
-        State ? ApiPutService(url, item, State.id) : ApiPostService(url, item)
+        State ? HTTPService().ApiPutService(item, State.id) : HTTPService().ApiPostService(item)
         notify()
         setIsSubmitted(true)
     }
-
+    
+    
     useEffect(()=>{
         if (State) {
             

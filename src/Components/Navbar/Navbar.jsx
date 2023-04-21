@@ -27,7 +27,7 @@ const Navbar = () => {
       <ul className={`menu ${showMenu ? 'show' : ''}`}>
       <Link  to="/" className='link-a'><li>Inicio</li></Link>
         <li>Explora</li>
-        <li>Buscar</li>
+      <Link to="/Search" className='link-a'><li>Buscar</li> </Link>
         <li onClick={scrollToFooter}>Conócenos</li>
       </ul>
     </nav> 
