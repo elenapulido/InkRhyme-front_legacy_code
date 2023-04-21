@@ -6,7 +6,7 @@ import EventBus from "../../Common/EventBus";
   const [content, setContent] = useState("");
 
   useEffect(() => {
-    UserService.getModeratorBoard().then(
+    UserService().getModeratorBoard().then(
       (response) => {
         setContent(response.data);
       },
@@ -20,7 +20,7 @@ import EventBus from "../../Common/EventBus";
         );
 
         if (error.response && error.response.status === 401) {
-          EventBus.dispatch("logout");
+          EventBus().dispatch("logout");
         }
       }
     );

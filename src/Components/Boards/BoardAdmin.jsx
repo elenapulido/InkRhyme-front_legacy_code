@@ -6,7 +6,7 @@ const BoardAdmin = () => {
   const [content, setContent] = useState("");
 
   useEffect(() => {
-    UserService.getAdminBoard().then(
+    UserService().getAdminBoard().then(
       response => {
         setContent(response.data);
       },
@@ -18,7 +18,7 @@ const BoardAdmin = () => {
         );
 
         if (error.response && error.response.status === 401) {
-          EventBus.dispatch("logout");
+          EventBus().dispatch("logout");
         }
       }
     );
@@ -28,6 +28,7 @@ const BoardAdmin = () => {
     <div className="container">
       <header className="jumbotron">
         <h3>{content}</h3>
+        
       </header>
     </div>
   );

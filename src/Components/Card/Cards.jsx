@@ -70,15 +70,7 @@ return (
                     </Box>
                 </Box>
 
-                <Link
-                    component="button"
-                    underline="none"
-                    fontSize="sm"
-                    fontWeight="lg"
-                    textColor="text.primary"
-                >
-                    8.1M Likes
-                </Link>
+             
 
                 <Typography fontSize="sm">
                     <Link
@@ -103,17 +95,7 @@ return (
                     more
                 </Link>
 
-                <CardOverflow sx={{ p: 'var(--Card-padding)', display: 'flex' }}>
-                    <Input
-                        variant="plain"
-                        size="sm"
-                        placeholder="Add a comment…"
-                        sx={{ flexGrow: 1, mr: 1, '--Input-focusedThickness': '0px' }}
-                    />
-                    <Link disabled underline="none" role="button">
-                        Post
-                    </Link>
-                </CardOverflow>
+                
 
             </Card>
         </>

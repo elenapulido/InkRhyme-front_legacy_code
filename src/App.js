@@ -10,6 +10,7 @@ import Register from './Views/Register/RegisterView';
 import BoardUser from './Views/BoardUser/BoardUser';
 import BoardModerator from './Views/BoardModerator/BoardModerator';
 import BoardAdmin from './Views/BoardAdmin/BoardAdmin';
+import SearchPage from './Views/SearchPage/SearchPage';
 
 
 const App = () => {
@@ -40,6 +41,9 @@ const App = () => {
     },{
       path: "/admin",
       element: <BoardAdmin />
+    },{
+      path: "/Search",
+      element: <SearchPage />
     },
   ]);
   return (

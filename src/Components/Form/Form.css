@@ -3,16 +3,10 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: #BA93D2;
+    background-color: white;
     height: 100%;
 }
 
-/* .FormPage-Form form{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items:center;
-} */
 
 .Form-row {
     display: flex;
@@ -47,16 +41,16 @@ label {
 
 input:focus,
 textarea:focus {
-    outline: none;
+outline: none;
 
 }
 
 input {
     width: auto;
     border: none;
-    background-color: #f4e3ffcb;
+    background-color: white;
     border-style: none;
-    border-bottom: #BA93D2;
+    border-bottom: black;
     border-bottom-style: outset;
 }
 
@@ -85,7 +79,7 @@ input {
 }
 
 label {
-    color: white;
+    color: black;
     font-weight: bold;
     letter-spacing: 0.2vh;
 }

@@ -6,7 +6,7 @@ function BoardUser() {
   const [content, setContent] = useState("");
 
   useEffect(() => {
-    UserService.getUserBoard().then(
+    UserService().getUserBoard().then(
       (response) => {
         setContent(response.data);
       },
@@ -20,7 +20,7 @@ function BoardUser() {
         );
 
         if (error.response && error.response.status === 401) {
-          EventBus.dispatch("logout");
+          EventBus().dispatch("logout");
         }
       }
     );

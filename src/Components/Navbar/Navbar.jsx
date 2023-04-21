@@ -64,34 +64,13 @@ function Navbar1() {
           </Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body>
-          <Nav className="mr-auto">
-            {showModeratorBoard && (
-              <Nav.Item>
-                <Link to={"/mod"} className="nav-link">
-                  Moderator Board
-                </Link>
-              </Nav.Item>
-            )}
-
-            {showAdminBoard && (
-              <Nav.Item>
-                <Link to={"/admin"} className="nav-link">
-                  Admin Board
-                </Link>
-              </Nav.Item>
-            )}
-
-            {currentUser && (
-              <Nav.Item>
-                <Link to={"/user"} className="nav-link">
-                  User
-                </Link>
-              </Nav.Item>
-            )}
-          </Nav>
-
-          {currentUser ? (
+        {currentUser ? (
             <Nav className="ml-auto">
+               <Nav.Item>
+                <a href="/" className="nav-link" onClick={handleLogout}>
+                  Inicio
+                </a>
+              </Nav.Item>
               <Nav.Item>
                 <Link to={"/profile"} className="nav-link">
                   {currentUser.username}
@@ -103,6 +82,12 @@ function Navbar1() {
                   LogOut
                 </a>
               </Nav.Item>
+              <Nav.Item>
+                <a href="/Search" className="nav-link" onClick={handleLogout}>
+                  Buscar
+                </a>
+              </Nav.Item>
+             
             </Nav>
           ) : (
             <Nav className="ml-auto">
@@ -123,6 +108,11 @@ function Navbar1() {
                   Sign Up
                 </Link>
               </Nav.Item>
+              <Nav.Item>
+                <Link to={"/Search"} className="nav-link">
+                  Buscar
+                </Link>
+              </Nav.Item>
             </Nav>
           )}
         </Offcanvas.Body>
@@ -134,41 +124,4 @@ function Navbar1() {
         }
   
   export default Navbar1;
-
-//   return (
-//     <div>
-
-//       <Navbar bg="bg-secondary" expand='md' className="mb-3 navigation">
-//         <Container fluid>
-//           <Navbar.Brand href="/Form">
-//             <img className='plusNavigation' src={Plus} alt='Plus Menu' /></Navbar.Brand>
-//           <Navbar.Toggle aria-controls="offcanvasNavbar-expand" />
-//           <Navbar.Offcanvas
-//             id="offcanvasNavbar-expand"
-//             aria-labelledby="offcanvasNavbarLabel-expand"
-//             placement="end" className="bg-secondary"
-//           >
-//             <Offcanvas.Header closeButton>
-//               <Offcanvas.Title id="offcanvasNavbarLabel-expand">
-
-//               </Offcanvas.Title>
-//             </Offcanvas.Header>
-//             <Offcanvas.Body>
-//               <Nav className="justify-content-end flex-grow-1 pe-3">
-//                 <Nav.Link className="text-white" href="/">Inicio</Nav.Link>
-//                 <Nav.Link className="text-white" href="/Form">Buscar</Nav.Link>
-//                 <Nav.Link className="text-white" href="/Login">Login</Nav.Link>
-//                 <Nav.Link className="text-white" href="/Register">Sign Up</Nav.Link>
-//               </Nav>
-//             </Offcanvas.Body>
-//           </Navbar.Offcanvas>
-//         </Container>
-//       </Navbar>
-
-//     </div>
-//   )
-// }
-
-
-
 

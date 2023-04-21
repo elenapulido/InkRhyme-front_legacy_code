@@ -1,57 +1,16 @@
+* {
+  margin: 0;
+  padding: 0; 
+}
+
 .footer {
-    display: flex;
-    background-color: #BA93D2;
-    justify-content: space-around;
-    position: relative;
-    width: 100%;
-    bottom: 0;
-    left: 0;
-    margin-right: 0%;
-    color: black;
-    font-size: 18px;
-    line-height: 1;
-   }
-  
-  .footer ul {
-    margin-left: -2.8em;
-    margin-top: 1.5em;
-  }
+  background-color:  rgb(209, 208, 208); 
+ }
 
-  .footer ul li {
-    list-style: none;
-    font-weight: bold;
-    text-align: left;
-  }
+footer ul li {
+  font-weight: bold;  
+}
 
-  
-   
-  .continue {
+p {
   font-weight: bold;
-  margin-top: 1.5em;
-  }
-
-  .continue p {
-    margin-right: 1.1em;
-  }
-  
-  .icons {
-    margin-top: -0.7em;
-    margin-right: -1.3em;
-  }
-  
-  .iconfacebook {
-    padding-right: 0.5em;
-  }
-  
-  .iconinstagram {
-    padding-right: 0.5em;
-  }
-  
-  .iconlinkedin {
-    padding-right: 0.5em;
-  }
-  
-  .icontwitter {
-    padding-right: 0.5em;
-  }
-  
+}

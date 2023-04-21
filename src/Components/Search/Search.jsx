@@ -1,21 +1,22 @@
 import { useState } from "react";
+import Cards from '../Card/Cards';
 import HTTPService from "../../Services/HTTPService";
-import "./Search.css";
+
 
 function Search() {
-  const [searchTerm, setSearchTerm] = useState("");
+  const [searchGenre, setSearchGenre] = useState("");
   const [results, setResults] = useState([]);
   const httpService = HTTPService();
 
-  const handleSearchTermChange = (event) => {
-    setSearchTerm(event.target.value);
+  const handleSearchGenreChange = (event) => {
+    setSearchGenre(event.target.value);
   };
 
   const handleSearchClick = async () => {
-    if (searchTerm) {
+    if (searchGenre) {
       const data = await httpService.ApiGetService();
       const filteredResults = data.filter((item) =>
-        item.genre.toLowerCase().includes(searchTerm.toLowerCase())
+        item.genre.toLowerCase().includes(searchGenre.toLowerCase())
       );
       setResults(filteredResults);
     } else {
@@ -27,10 +28,10 @@ function Search() {
     <div className="d-flex" role="search">
       <input
         className="form-control me-2"
-        placeholder="Search"
-        type="text"
-        value={searchTerm}
-        onChange={handleSearchTermChange}
+        placeholder="🔍Search..."
+        type="search"
+        value={searchGenre}
+        onChange={handleSearchGenreChange}
         aria-label="Search"
       />
 
@@ -43,10 +44,12 @@ function Search() {
       </button>
 
       {results.length > 0 && (
+        <div className='container'>
         <div className="position-absolute bg-white">
           {results.map((result) => (
-            <div key={result.id}>{result.genre}</div>
+            <Cards key={result.id} id={result.id} author={result.author} title={result.title} url={result.url} poem={result.poem} genre={result.genre}  />
           ))}
+        </div>
         </div>
       )}
     </div>

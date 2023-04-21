@@ -3,9 +3,10 @@ import toast, { Toaster } from 'react-hot-toast';
 import HTTPService from '../../Services/HTTPService'
 import "./Form.css"
 import { CiSaveUp1 } from "react-icons/ci";
-import { IoMdReturnLeft } from "react-icons/io";
 import CategoryInput from '../CategoryInput/CategoryInput';
 import {useLocation } from 'react-router-dom';
+import { IoMdReturnLeft } from "react-icons/io";
+import { MdCancelPresentation, MdFileUpload } from "react-icons/md";
 
 
 function Form() {
@@ -59,11 +60,11 @@ function Form() {
                 </>
                 :
                 <form onSubmit={handleSubmit} method="post">
-                    <button className='b-post'><CiSaveUp1  /></button>
+                    
                     <div className='Form-row'>
                         <label>URL de la imagen:</label>
                         <div className="form-row-div">
-                            <input type="url" name="url" onChange={handleChange} autoComplete="off" placeholder="Url de la Imagén" required pattern="https?://.+" />
+                            <input type="url" name="url" onChange={handleChange} autoComplete="off" placeholder="Url de la Imagen" required pattern="https?://.+" />
                         </div>
                     </div>
                     <div className='Form-row'>
@@ -87,6 +88,8 @@ function Form() {
                         <label>Tu Poema:</label>
                         <textarea rows="8" type="text" onChange={handleChange} name="poem" id="" required />
                     </div>
+                    <button><MdFileUpload size={25} /></button>
+                    <button><MdCancelPresentation onClick={() => {window.location.href = "/"}} size={25} /></button>
                 </form>
             }
 
