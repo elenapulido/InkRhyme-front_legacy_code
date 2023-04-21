@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Cards from '../Card/Cards';
 import HTTPService from "../../Services/HTTPService";
-import "./Search.css";
+
 
 function Search() {
   const [searchGenre, setSearchGenre] = useState("");
@@ -26,7 +26,6 @@ function Search() {
 
   return (
     <div className="d-flex" role="search">
-      <h2>𝓟𝓞𝓔𝓜𝓐𝓢</h2>
       <input
         className="form-control me-2"
         placeholder="🔍Search..."
