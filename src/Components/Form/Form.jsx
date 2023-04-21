@@ -4,11 +4,11 @@ import HTTPService from '../../Services/HTTPService'
 import { IoMdReturnLeft } from "react-icons/io";
 import { MdCancelPresentation, MdFileUpload } from "react-icons/md";
 import CategoryInput from '../CategoryInput/CategoryInput';
-import {useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import "./Form.css"
 
 function Form() {
-    
+
     const categories = ['Lírica', 'Épica', 'Dramática', 'Romántica'];
     let [item, setItem] = useState({ genre: categories[0] })
     let [isSubmitted, setIsSubmitted] = useState(false)
@@ -47,11 +47,11 @@ function Form() {
             {isSubmitted ?
                 <>
                     <h2 className='return-h2'>Volver a la página de inicio</h2>
-                    <button className='b-return' onClick={() => {window.location.href = "/"}}><IoMdReturnLeft /></button>
+                    <button className='b-return' onClick={() => { window.location.href = "/" }}><IoMdReturnLeft /></button>
                 </>
                 :
                 <form onSubmit={handleSubmit} method="post">
-                    
+
                     <div className='Form-row'>
                         <label>URL de la imagen:</label>
                         <div className="form-row-div">
@@ -79,9 +79,9 @@ function Form() {
                         <label>Tu Poema:</label>
                         <textarea rows="8" type="text" onChange={handleChange} name="poem" id="" required />
                     </div>
-                    
+
                     <button><MdFileUpload size={25} /></button>
-                    <button><MdCancelPresentation onClick={() => {window.location.href = "/"}} size={25} /></button>
+                    <button><MdCancelPresentation onClick={() => { window.location.href = "/" }} size={25} /></button>
                 </form>
             }
 

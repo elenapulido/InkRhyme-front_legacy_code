@@ -7,8 +7,8 @@ const Header = () => {
     return (   
     <div  id='headerId' className='header'>
 
-    <div class="container">
-    <header class="d-flex justify-content-center py-3">    
+    <div className="container">
+    <header className="d-flex justify-content-center py-3">    
         <Link className="logo" to="/"><img className='logo' src={Logo}/></Link>
     </header>
     </div>
