@@ -36,16 +36,17 @@ function Article() {
     }
   };
 
-  const handleEdit = (id) => {
-    const dataToEdit = data.find(d => d.id === id);
-    setEditingData(dataToEdit);
+ 
+
+  const handleEdit = () => {
+    setEditingData(true);
   }
 
   return (
     <>
       {editingData ? (
         <div>
-          <EditForm data={editingData} onSubmit={handleEdit} onCancel={handleEdit} />
+          <EditForm data={data} onSubmit={handleEdit} />
         </div>
       ) : (
         <div>
@@ -78,9 +79,10 @@ function Article() {
 
               <Button variant="outlined" color="neutral" onClick={handleDelete} size="sm">Borrar</Button>
               <Button variant="outlined" color="neutral" onClick={() => handleEdit(data.id)} size="sm">Editar</Button>
-              <HeartButton />
+             
             </div>
           </Card>
+          <HeartButton />
         </div>
       )}
     </>

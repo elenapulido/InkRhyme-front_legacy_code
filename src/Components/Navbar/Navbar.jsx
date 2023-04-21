@@ -67,7 +67,7 @@ function Navbar1() {
         {currentUser ? (
             <Nav className="ml-auto">
                <Nav.Item>
-                <a href="/" className="nav-link" onClick={handleLogout}>
+                <a href="/" className="nav-link" >
                   Inicio
                 </a>
               </Nav.Item>
@@ -83,7 +83,7 @@ function Navbar1() {
                 </a>
               </Nav.Item>
               <Nav.Item>
-                <a href="/Search" className="nav-link" onClick={handleLogout}>
+                <a href="/Search" className="nav-link" >
                   Buscar
                 </a>
               </Nav.Item>
