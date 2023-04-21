@@ -4,7 +4,7 @@ import authHeader from './AuthService';
 
 const HTTPService = () => {
 
-  const url = 'http://localhost:8082/api/v1/poems';
+  const url = 'http://localhost:8080/api/v1/poems';
 
   const ApiGetService = async () => {
     const response = await axios.get(`${url}`);
