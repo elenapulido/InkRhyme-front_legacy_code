@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Cards from '../Card/Cards';
 import HTTPService from "../../Services/HTTPService";
+import "./Search.css"
 
 
 function Search() {
@@ -25,6 +26,7 @@ function Search() {
   };
 
   return (
+    <div className='container'>
     <div className="d-flex" role="search">
       <input
         className="form-control me-2"
@@ -44,14 +46,15 @@ function Search() {
       </button>
 
       {results.length > 0 && (
-        <div className='container'>
+        
         <div className="position-absolute bg-white">
           {results.map((result) => (
             <Cards key={result.id} id={result.id} author={result.author} title={result.title} url={result.url} poem={result.poem} genre={result.genre}  />
           ))}
         </div>
-        </div>
+        
       )}
+    </div>
     </div>
   );
 }
