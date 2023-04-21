@@ -78,9 +78,10 @@ function Article() {
 
               <Button variant="outlined" color="neutral" onClick={handleDelete} size="sm">Borrar</Button>
               <Button variant="outlined" color="neutral" onClick={() => handleEdit(data.id)} size="sm">Editar</Button>
-              <HeartButton />
+             
             </div>
           </Card>
+          <HeartButton />
         </div>
       )}
     </>
