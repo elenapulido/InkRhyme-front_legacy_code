@@ -87,27 +87,7 @@ function Profile({ id, url }) {
               {currentUser.username}
             </Link>{' '}
           </Typography>
-          <Typography fontSize="sm">
-            <Link
-              component="button"
-              color="neutral"
-              fontWeight="lg"
-              textColor="text.primary"
-            >Token:
-              {currentUser.accessToken.substring(0, 20)} ...{" "}
-              {currentUser.accessToken.substr(currentUser.accessToken.length - 20)}
-            </Link>{' '}
-          </Typography>
-          <Typography fontSize="sm">
-            <Link
-              component="button"
-              color="neutral"
-              fontWeight="lg"
-              textColor="text.primary"
-            >Id:
-              {currentUser.id}
-            </Link>{' '}
-          </Typography>
+
           <Typography fontSize="sm">
             <Link
               component="button"
