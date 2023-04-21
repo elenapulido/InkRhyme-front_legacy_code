@@ -4,7 +4,6 @@ import "./Article.css";
 import { useLocation, useNavigate } from "react-router-dom";
 import HTTPService from "../../Services/HTTPService";
 import HeartButton from "../HeartButton/HeartButton";
-import React from 'react';
 import AspectRatio from '@mui/joy/AspectRatio';
 import Link from '@mui/joy/Link';
 import Card from '@mui/joy/Card';
@@ -13,8 +12,6 @@ import Button from '@mui/joy/Button';
 import Avatar from '@mui/joy/Avatar';
 import Box from '@mui/joy/Box';
 import EditForm from "../EditForm/EditForm";
-
-
 
 function Article() {
   const idInState = useLocation().state.id
@@ -35,26 +32,7 @@ function Article() {
         .catch(console.error);
     }
   };
-
-  const handleEdit = (id) => {
-    if (!Array.isArray(data)) {
-      console.log("data no es un array!");
-      return;
-    }
   
-    const dataToEdit = data.find(d => d.id === id);
-    setEditingData(dataToEdit);
-  }
-
-
-  const handleDelete = () => {
-    if (window.confirm("¿Está seguro de que desea eliminar este elemento?")) {
-      HTTPService().ApiDeleteService(data.id)
-        .then(() => navigate("/"))
-        .catch(console.error);
-    }
-  };
-
   const handleEdit = (id) => {
     const dataToEdit = data.find(d => d.id === id);
     setEditingData(dataToEdit);
