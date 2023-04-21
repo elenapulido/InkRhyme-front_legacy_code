@@ -68,7 +68,7 @@ function Navbar1() {
             <Nav className="ml-auto">
                <Nav.Item>
                 <a href="/" className="nav-link" >
-                  Inicio
+                  Home
                 </a>
               </Nav.Item>
               <Nav.Item>
