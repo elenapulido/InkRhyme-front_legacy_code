@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from 'react'
 import toast, { Toaster } from 'react-hot-toast';
 import HTTPService from '../../Services/HTTPService'
+import "./Form.css"
+import { CiSaveUp1 } from "react-icons/ci";
+import CategoryInput from '../CategoryInput/CategoryInput';
+import {useLocation } from 'react-router-dom';
 import { IoMdReturnLeft } from "react-icons/io";
 import { MdCancelPresentation, MdFileUpload } from "react-icons/md";
-import CategoryInput from '../CategoryInput/CategoryInput';
-import { useLocation } from 'react-router-dom';
-import "./Form.css"
+
 
 function Form() {
-
+    
     const categories = ['Lírica', 'Épica', 'Dramática', 'Romántica'];
     let [item, setItem] = useState({ genre: categories[0] })
     let [isSubmitted, setIsSubmitted] = useState(false)
@@ -40,6 +42,13 @@ function Form() {
         notify()
         setIsSubmitted(true)
     }
+    
+    
+    useEffect(()=>{
+        if (State) {
+            
+        }
+    })
 
     return (
         <div className='FormPage-Form'>
@@ -51,11 +60,11 @@ function Form() {
                 </>
                 :
                 <form onSubmit={handleSubmit} method="post">
-
+                    
                     <div className='Form-row'>
                         <label>URL de la imagen:</label>
                         <div className="form-row-div">
-                            <input type="url" name="url" onChange={handleChange} autoComplete="off" placeholder="URL de la Imagen" required pattern="https?://.+" />
+                            <input type="url" name="url" onChange={handleChange} autoComplete="off" placeholder="Url de la Imagen" required pattern="https?://.+" />
                         </div>
                     </div>
                     <div className='Form-row'>
@@ -79,9 +88,8 @@ function Form() {
                         <label>Tu Poema:</label>
                         <textarea rows="8" type="text" onChange={handleChange} name="poem" id="" required />
                     </div>
-
                     <button><MdFileUpload size={25} /></button>
-                    <button><MdCancelPresentation onClick={() => { window.location.href = "/" }} size={25} /></button>
+                    <button><MdCancelPresentation onClick={() => {window.location.href = "/"}} size={25} /></button>
                 </form>
             }
 
